@@ -1,0 +1,45 @@
+﻿l_english:
+ #ATMOSPHERES
+ climate_class_none:0 "No Atmosphere"
+ class_none:0 "§RNo Atmosphere§!"
+
+ climate_class_N2O2:0 "Nitrogen-Oxygen Atmosphere"
+ class_N2O2:0 "§GNitrogen/Oxygen Atmosphere§!"
+ 
+ climate_class_CH4:0 "Methane Atmosphere"
+ class_CH4:0 "§MMethane Atmosphere§!"
+ 
+ climate_class_CO2:0 "Carbon Dioxide Atmosphere"
+ class_CO2:0 "§YCarbon Dioxide Atmosphere§!"
+ 
+ climate_class_CO2N2:0 "Carbon-Nitrogen Atmosphere"
+ class_CO2N2:0 "§HCarbon-Nitrogen Atmosphere§!"
+ 
+ climate_class_N2:0 "Nitrogen Atmosphere"
+ class_N2:0 "§BNitrogen Atmosphere§!"
+ 
+ climate_class_H:0 "Hydrogen Atmosphere"
+ class_H:0 "§HHydrogen Atmosphere§!"
+ 
+ climate_class_NH3:0 "Ammonia Atmosphere"
+ class_NH3:0 "§MAmmonia Atmosphere§!"
+ 
+ climate_class_SO2:0 "Sulfur Dioxide Atmosphere"
+ class_SO2:0 "§YSulfur Atmosphere§!"
+ 
+ climate_class_fallout:0 "Fall Out"
+ class_fallout:0 "§LFall Out§!"
+ 
+ #nh3/ch4
+ climate_class_NH3CH4:0 "Ammonia-Methane Atmosphere"
+ class_ammoniaMethane:0 "§SAmmonia Atmosphere§!"
+ 
+ climate_class_CL:0 "Chlorine Atmosphere"
+ class_chlorine:0 "§HChlroine Atmosphere§!"
+ 
+ climate_class_HE:0 "Helium Atmosphere"
+ class_helium:0 "§HHelium Atmosphere§!"
+ 
+ #H R T L Y M S G B W
+ #climate_class_#:0 "# Atmosphere"
+ #class_#:0 "§H # Atmosphere§!"

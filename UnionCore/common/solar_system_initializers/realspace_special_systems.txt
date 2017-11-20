@@ -1,0 +1,5690 @@
+@base_moon_distance = 10
+
+@standard_min = 26
+@standard_max = 30
+@standard_sat_min = 22
+@standard_sat_max = 27
+
+# Hypergiant Class O
+rs_special_init_1 = {
+	class = "sc_o_hyper"
+	
+	usage = misc_system_init
+	usage_odds = 1
+	max_instances = 3
+	
+	planet = {
+		class = pc_o_hyper_star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = @standard_min max = @standard_max }
+		has_ring = no
+	}
+	
+	change_orbit = 40
+	
+	planet = {
+		count = 1
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		change_orbit = 10
+		
+	}
+	
+	change_orbit = 10
+	
+	planet = {
+		count = { min = 0 max = 5 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		change_orbit = 10
+		
+	}
+	
+	change_orbit = 15
+
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		change_orbit = 10
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+}
+
+# Hypergiant Class M
+rs_special_init_2 = {
+	class = "sc_m_hyper"
+	asteroids_distance = 80
+	
+	usage = misc_system_init
+	usage_odds = 1
+	max_instances = 5
+	
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = @standard_min max = @standard_max }
+		has_ring = no
+	}
+	
+	change_orbit = 80
+	
+	planet = {
+		count = { min = 1 max = 6 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+	}
+	
+	change_orbit = 10
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		class = "pc_barren"
+		entity = "barren_planet_01_destroyed_entity"
+		size = { min = 10 max = 15 }
+		
+		init_effect = { prevent_anomaly = yes }
+	}
+	
+	change_orbit = 20
+
+	planet = {
+		count = { min = 0 max = 3 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = 10
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+}
+
+# Wolf–Rayet Star Azure
+rs_special_init_3 = {
+	class = "sc_w_azure"
+	asteroids_distance = 85
+	
+	usage = misc_system_init
+	usage_odds = 1
+	max_instances = 3
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = @standard_min max = @standard_max }
+		has_ring = no
+		
+		init_effect = {
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 1
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 90
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 180
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 270
+				}
+			}
+			
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_large"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 65
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_large"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 96
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_large"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 150
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 210
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 115
+					angle = random
+				}
+			}
+
+
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 45
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 84
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 195
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 255
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+
+
+
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 45
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 75
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 168
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 235
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 278
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 306
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 193
+					angle = random
+				}
+			}
+		}
+	}
+	
+	change_orbit = 50
+	
+	planet = {
+		count = 1
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+	}
+	
+	change_orbit = 15
+	
+	planet = {
+		count = { min = 1 max = 6 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+	}
+	
+	change_orbit = 15
+	
+	planet = {
+		count = { min = 0 max = 3 }
+		orbit_distance = 60
+		class = "rl_giant"
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 35 max = 50 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 1 max = 4 }
+			size = { min = 8 max = 20 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 6
+		}
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = { min = 0 max = 4 }
+		orbit_distance = 25
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+}
+
+# Wolf–Rayet Star Red
+rs_special_init_4 = {
+	class = "sc_w_red"
+	asteroids_distance = 85
+	
+	usage = misc_system_init
+	usage_odds = 1
+	max_instances = 3
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = @standard_min max = @standard_max }
+		has_ring = no
+		
+		init_effect = {
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 1
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 90
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 180
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 270
+				}
+			}
+			
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 65
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 96
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 150
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 210
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 115
+					angle = random
+				}
+			}
+
+
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 45
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 84
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 195
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 255
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+
+
+
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 45
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 75
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 168
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 235
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 278
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 306
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 193
+					angle = random
+				}
+			}
+		}
+	}
+	
+	change_orbit = 50
+	
+	planet = {
+		count = 1
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		
+	}
+	
+	change_orbit = 15
+	
+	planet = {
+		count = { min = 1 max = 6 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+	}
+	
+	change_orbit = 15
+	
+	planet = {
+		count = { min = 0 max = 3 }
+		orbit_distance = 60
+		class = "rl_giant"
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 35 max = 50 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 1 max = 4 }
+			size = { min = 8 max = 20 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 6
+		}
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = { min = 0 max = 4 }
+		orbit_distance = 25
+		orbit_angle = { min = 90 max = 270 }
+		
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+}
+
+# Wolf–Rayet Star Green
+rs_special_init_5 = {
+	class = "sc_w_green"
+	asteroids_distance = 85
+	
+	usage = misc_system_init
+	usage_odds = 1
+	max_instances = 3
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = @standard_min max = @standard_max }
+		has_ring = no
+		
+		init_effect = {
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 1
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 90
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 180
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 270
+				}
+			}
+			
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 65
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 96
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 150
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 210
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 115
+					angle = random
+				}
+			}
+
+
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 45
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 84
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 195
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 255
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+
+
+
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 45
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 75
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 168
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 235
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 278
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 306
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 193
+					angle = random
+				}
+			}
+		}
+	}
+	
+	change_orbit = 50
+	
+	planet = {
+		count = 1
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		
+	}
+	
+	change_orbit = 15
+	
+	planet = {
+		count = { min = 1 max = 6 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+	}
+	
+	change_orbit = 15
+	
+	planet = {
+		count = { min = 0 max = 3 }
+		orbit_distance = 60
+		class = "rl_giant"
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 35 max = 50 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 1 max = 4 }
+			size = { min = 8 max = 20 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 6
+		}
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = { min = 0 max = 4 }
+		orbit_distance = 25
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+}
+
+# Wolf–Rayet Star Purple
+rs_special_init_6 = {
+	class = "sc_w_purple"
+	asteroids_distance = 85
+	
+	usage = misc_system_init
+	usage_odds = 1
+	max_instances = 3
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = @standard_min max = @standard_max }
+		has_ring = no
+		
+		init_effect = {
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 1
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 90
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 180
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 270
+				}
+			}
+			
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_large"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 65
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_large"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 96
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_large"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 150
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 210
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 115
+					angle = random
+				}
+			}
+
+
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 45
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 84
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 195
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 255
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+
+
+
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 45
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 75
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_large"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 168
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 235
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 278
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 306
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 193
+					angle = random
+				}
+			}
+		}
+	}
+	
+	change_orbit = 50
+	
+	planet = {
+		count = 1
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		
+	}
+	
+	change_orbit = 15
+	
+	planet = {
+		count = { min = 1 max = 6 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+	}
+	
+	change_orbit = 15
+	
+	planet = {
+		count = { min = 0 max = 3 }
+		orbit_distance = 60
+		class = "rl_giant"
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 35 max = 50 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 1 max = 4 }
+			size = { min = 8 max = 20 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 6
+		}
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = { min = 0 max = 4 }
+		orbit_distance = 25
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+}
+
+# Strange Binary Star System 1
+rs_special_init_7 = {
+	class = "rl_special_stars"
+	
+	usage = misc_system_init
+	usage_odds = 1
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = { min = 20 max = 25 }
+		orbit_angle = 1
+		has_ring = no
+	}
+	
+	planet = {
+		count = 1
+		class = "special_stars"
+		orbit_distance = { min = 45 max = 60 }
+		orbit_angle = 180
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		orbit_distance = 10
+		orbit_angle = { min = 90 max = 270 }
+		
+	}
+	
+	change_orbit = 20
+	
+	planet = {
+		count = { min = 0 max = 4 }
+		orbit_distance = 15
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 2 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	change_orbit = 25
+	
+	planet = {
+		count = { min = 0 max = 4 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+	}
+}
+
+# Strange Binary Star System 2
+rs_special_init_8 = {
+	class = "rl_special_stars"
+	
+	usage = misc_system_init
+	usage_odds = 1
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		has_ring = no
+	}
+	
+	planet = {
+		count = 1
+		class = "blue_stars"
+		orbit_distance = { min = 45 max = 60 }
+		orbit_angle = 180
+		size = { min = @standard_min max = @standard_max }
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		orbit_distance = 10
+		orbit_angle = { min = 90 max = 270 }
+	}
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 60
+		class = "rl_giant"
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 35 max = 50 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 3 }
+			size = { min = 8 max = 20 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 6
+			size = { min = 8 max = 20 }
+		}
+	}
+	
+	planet = {
+		count = { min = 0 max = 4 }
+		orbit_distance = 60
+		class = "rl_giant"
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 35 max = 50 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 4 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 6
+			size = { min = 8 max = 20 }
+		}
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 60
+		class = "rl_giant"
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 35 max = 50 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 1 max = 4 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 6
+			size = { min = 8 max = 20 }
+		}
+	}
+	
+	change_orbit = 30
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		
+	}
+}
+
+# Nova 1
+rs_special_init_9 = {
+	class = sc_nova_1
+	
+	usage = misc_system_init
+	usage_odds = 1
+	max_instances = 3
+	
+	planet = {
+		class = star
+		orbit_distance = 6
+		orbit_angle = 0
+		size = { min = 10 max = 12 }
+	}
+	
+	planet = {
+		class = "red_giant"
+		orbit_distance = 10
+		orbit_angle = 180
+		size = { min = @standard_min max = @standard_max }
+		
+		init_effect = {
+
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 119
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 87
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 124
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 116
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 106
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+
+
+
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 134
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 138
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 140
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 152
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 157
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 160
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 146
+					angle = random
+				}
+			}
+			
+			
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 119
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 87
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 124
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 116
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 106
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+
+
+
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 134
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 138
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 140
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 152
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 157
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 160
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 146
+					angle = random
+				}
+			}
+		}
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 1 max = 3 }
+		class = "pc_molten"
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 10 max = 15 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_molten"
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	change_orbit = 20
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		class = "pc_barren"
+		entity = "barren_planet_01_destroyed_entity"
+		size = { min = 10 max = 15 }
+		
+		init_effect = { prevent_anomaly = yes }
+	}
+	
+	planet = {
+		count = { min = 1 max = 3 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 10 max = 15 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+}
+
+# Nova 2
+rs_special_init_10 = {
+	class = sc_nova_2
+	
+	usage = misc_system_init
+	usage_odds = 1
+	max_instances = 3
+	
+	planet = {
+		class = star
+		orbit_distance = 6
+		orbit_angle = 0
+		size = { min = 12 max = 15 }
+	}
+	
+	planet = {
+		class = "blue_supergiant"
+		orbit_distance = 8
+		orbit_angle = 180
+		size = 10
+		
+		init_effect = {
+
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 119
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 87
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 124
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 116
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 106
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+
+
+
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 134
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 138
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 140
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 152
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 157
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 160
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 146
+					angle = random
+				}
+			}
+			
+			
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 119
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 87
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 124
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 116
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 106
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+
+
+
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 134
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 138
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 140
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 152
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 157
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 160
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 146
+					angle = random
+				}
+			}
+		}
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 1 max = 3 }
+		class = "pc_molten"
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 10 max = 15 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_molten"
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	change_orbit = 20
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		class = "pc_barren"
+		entity = "barren_planet_01_destroyed_entity"
+		size = { min = 10 max = 15 }
+		
+		init_effect = { prevent_anomaly = yes }
+	}
+	
+	planet = {
+		count = { min = 1 max = 3 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 10 max = 15 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+}
+
+# Supernova
+rs_special_init_11 = {
+	class = sc_supernova
+	
+	usage = misc_system_init
+	usage_odds = 1
+	max_instances = 5
+	
+	planet = {
+		class = star
+		orbit_distance = 0
+		size = { min = @standard_min max = @standard_max }
+		
+		init_effect = {
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 1
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 90
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 180
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 105
+					angle = 270
+				}
+			}
+			
+			
+			
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 196
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 195
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 150
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 210
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 115
+					angle = random
+				}
+			}
+			
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 196
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 195
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 150
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 210
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 115
+					angle = random
+				}
+			}
+			
+
+			
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 184
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 195
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 195
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 255
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 75
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 184
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 195
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 195
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 255
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 75
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 168
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 235
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 278
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 306
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 193
+					angle = random
+				}
+			}
+			
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 146
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 164
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 166
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 172
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 149
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 141
+					angle = random
+				}
+			}
+		}
+	}
+	
+	
+	change_orbit = 75
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		class = "pc_molten"
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 10 max = 15 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_molten"
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	change_orbit = 20
+	
+	planet = {
+		count = { min = 0 max = 3 }
+		orbit_distance = 20
+		class = "pc_barren"
+		entity = "barren_planet_01_destroyed_entity"
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 10 max = 15 }
+		
+		init_effect = { prevent_anomaly = yes }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren"
+			entity = "barren_planet_01_destroyed_entity"
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	change_orbit = 20
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		class = "pc_molten"
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 10 max = 15 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_molten"
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	change_orbit = 35
+	
+	planet = {
+		count = { min = 0 max = 3 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 10 max = 15 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+}
+
+# Protostar
+rs_special_init_12 = {
+	class = sc_protostar
+	asteroids_distance = 65
+	
+	usage = misc_system_init
+	usage_odds = 1
+	max_instances = 6
+	
+	planet = {
+		class = star
+		orbit_distance = 0
+		size = { min = @standard_min max = @standard_max }
+		
+		init_effect = {
+			create_ambient_object = {
+				type = "black_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 85
+					angle = 1
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 85
+					angle = 90
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 85
+					angle = 180
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 85
+					angle = 270
+				}
+			}
+			
+			
+			
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 65
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 96
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 65
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 150
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 110
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 115
+					angle = random
+				}
+			}
+			
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 96
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 150
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 110
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 115
+					angle = random
+				}
+			}
+			
+
+			
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 84
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 155
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 75
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 84
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+				scale = 3
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 155
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 75
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 168
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 135
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 178
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 106
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "black_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 93
+					angle = random
+				}
+			}
+			
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 146
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 164
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 166
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 72
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 149
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 141
+					angle = random
+				}
+			}
+			
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 146
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 164
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 166
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 72
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 149
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 141
+					angle = random
+				}
+			}
+		}
+	}
+	
+	change_orbit = 65
+	
+	planet = {
+		count = { min = 1 max = 6 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+	}
+	
+	planet = {
+		count = { min = 0 max = 6 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 10 max = 15 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+}
+
+# Luminous Blue Variable (Blue)
+rs_special_init_13 = {
+	class = "sc_lbv_blue"
+	asteroids_distance = 105
+	
+	usage = misc_system_init
+	usage_odds = 1
+	max_instances = 1
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = @standard_min max = @standard_max }
+		has_ring = no
+		
+		init_effect = {
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 125
+					angle = 1
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 125
+					angle = 90
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 125
+					angle = 180
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 125
+					angle = 270
+				}
+			}
+			
+			
+			
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 65
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 96
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 150
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 210
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 115
+					angle = random
+				}
+			}
+			
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 65
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 96
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+
+
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 55
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 84
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 195
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 255
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 175
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 168
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 235
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 278
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 306
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "blue_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 193
+					angle = random
+				}
+			}
+			
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 55
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 84
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 195
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 255
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "purple_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+		}
+	}
+	
+	change_orbit = 70
+	
+	planet = {
+		count = 1
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		
+	}
+	
+	change_orbit = 15
+	
+	planet = {
+		count = { min = 1 max = 6 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+	}
+	
+	change_orbit = 15
+	
+	planet = {
+		count = { min = 0 max = 3 }
+		orbit_distance = 60
+		class = "rl_giant"
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 35 max = 50 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 1 max = 4 }
+			size = { min = 8 max = 20 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 6
+		}
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = { min = 0 max = 4 }
+		orbit_distance = 25
+		orbit_angle = { min = 90 max = 270 }
+		
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+}
+
+# Luminous Blue Variable (Green)
+rs_special_init_14 = {
+	class = "sc_lbv_green"
+	asteroids_distance = 105
+	
+	usage = misc_system_init
+	usage_odds = 1
+	max_instances = 1
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = @standard_min max = @standard_max }
+		has_ring = no
+		
+		init_effect = {
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 125
+					angle = 1
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 125
+					angle = 90
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 125
+					angle = 180
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 125
+					angle = 270
+				}
+			}
+			
+			
+			
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 65
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 96
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 150
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 210
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 115
+					angle = random
+				}
+			}
+			
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 65
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 96
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+
+
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 55
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 84
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 195
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 255
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 175
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 168
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 235
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 278
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 306
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "green_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 193
+					angle = random
+				}
+			}
+			
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 55
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 84
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 195
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 255
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "azure_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+		}
+	}
+	
+	change_orbit = 70
+	
+	planet = {
+		count = 1
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		
+	}
+	
+	change_orbit = 15
+	
+	planet = {
+		count = { min = 1 max = 6 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+	}
+	
+	change_orbit = 15
+	
+	planet = {
+		count = { min = 0 max = 3 }
+		orbit_distance = 60
+		class = "rl_giant"
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 35 max = 50 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 1 max = 4 }
+			size = { min = 8 max = 20 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 6
+		}
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = { min = 0 max = 4 }
+		orbit_distance = 25
+		orbit_angle = { min = 90 max = 270 }
+		
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+}
+
+# Luminous Blue Variable (Red)
+rs_special_init_15 = {
+	class = "sc_lbv_red"
+	asteroids_distance = 105
+	
+	usage = misc_system_init
+	usage_odds = 1
+	max_instances = 1
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = @standard_min max = @standard_max }
+		has_ring = no
+		
+		init_effect = {
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 125
+					angle = 1
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 125
+					angle = 90
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 125
+					angle = 180
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_large"
+				entity_offset_height = { min = -100 max = -130 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 125
+					angle = 270
+				}
+			}
+			
+			
+			
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 65
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 96
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 150
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 210
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_medium"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 115
+					angle = random
+				}
+			}
+			
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 65
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 96
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				entity_offset_height = { min = -20 max = -60 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 95
+					angle = random
+				}
+			}
+
+
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 55
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 84
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 195
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 255
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 175
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 168
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 235
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 278
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 306
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "red_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 193
+					angle = random
+				}
+			}
+			
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 55
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 84
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 127
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 165
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 195
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 255
+					angle = random
+				}
+			}
+			create_ambient_object = {
+				type = "orange_dust_cloud_object_small"
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 145
+					angle = random
+				}
+			}
+		}
+	}
+	
+	change_orbit = 70
+	
+	planet = {
+		count = 1
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		
+	}
+	
+	change_orbit = 15
+	
+	planet = {
+		count = { min = 1 max = 6 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+	}
+	
+	change_orbit = 15
+	
+	planet = {
+		count = { min = 0 max = 3 }
+		orbit_distance = 60
+		class = "rl_giant"
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 35 max = 50 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 1 max = 4 }
+			size = { min = 8 max = 20 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 6
+		}
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = { min = 0 max = 4 }
+		orbit_distance = 25
+		orbit_angle = { min = 90 max = 270 }
+		
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+}

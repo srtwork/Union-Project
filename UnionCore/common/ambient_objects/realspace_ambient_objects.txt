@@ -1,0 +1,140 @@
+
+# Azure Dust Cloud
+ambient_object = {
+	name = "azure_dust_cloud_object_small"
+	entity = "azure_dust_cloud_entity_small"
+	selectable = no
+	show_name = no
+}
+ambient_object = {
+	name = "azure_dust_cloud_object_medium"
+	entity = "azure_dust_cloud_entity_medium"
+	selectable = no
+	show_name = no
+}
+ambient_object = {
+	name = "azure_dust_cloud_object_large"
+	entity = "azure_dust_cloud_entity_large"
+	selectable = no
+	show_name = no
+}
+
+# Red Dust Cloud
+ambient_object = {
+	name = "red_dust_cloud_object_large"
+	entity = "red_dust_cloud_entity_large"
+	selectable = no
+	show_name = no
+}
+ambient_object = {
+	name = "red_dust_cloud_object_medium"
+	entity = "red_dust_cloud_entity_medium"
+	selectable = no
+	show_name = no
+}
+ambient_object = {
+	name = "red_dust_cloud_object_small"
+	entity = "red_dust_cloud_entity_small"
+	selectable = no
+	show_name = no
+}
+
+# Green Dust Cloud
+ambient_object = {
+	name = "green_dust_cloud_object_small"
+	entity = "green_dust_cloud_entity_small"
+	selectable = no
+	show_name = no
+}
+ambient_object = {
+	name = "green_dust_cloud_object_medium"
+	entity = "green_dust_cloud_entity_medium"
+	selectable = no
+	show_name = no
+}
+ambient_object = {
+	name = "green_dust_cloud_object_large"
+	entity = "green_dust_cloud_entity_large"
+	selectable = no
+	show_name = no
+}
+
+# Purple Dust Cloud
+ambient_object = {
+	name = "purple_dust_cloud_object_small"
+	entity = "purple_dust_cloud_entity_small"
+	selectable = no
+	show_name = no
+}
+ambient_object = {
+	name = "purple_dust_cloud_object_medium"
+	entity = "purple_dust_cloud_entity_medium"
+	selectable = no
+	show_name = no
+}
+ambient_object = {
+	name = "purple_dust_cloud_object_large"
+	entity = "purple_dust_cloud_entity_large"
+	selectable = no
+	show_name = no
+}
+
+# Orange Dust Cloud
+ambient_object = {
+	name = "orange_dust_cloud_object_small"
+	entity = "orange_dust_cloud_entity_small"
+	selectable = no
+	show_name = no
+}
+ambient_object = {
+	name = "orange_dust_cloud_object_medium"
+	entity = "orange_dust_cloud_entity_medium"
+	selectable = no
+	show_name = no
+}
+ambient_object = {
+	name = "orange_dust_cloud_object_large"
+	entity = "orange_dust_cloud_entity_large"
+	selectable = no
+	show_name = no
+}
+
+# Blue Dust Cloud
+ambient_object = {
+	name = "blue_dust_cloud_object_small"
+	entity = "blue_dust_cloud_entity_small"
+	selectable = no
+	show_name = no
+}
+ambient_object = {
+	name = "blue_dust_cloud_object_medium"
+	entity = "blue_dust_cloud_entity_medium"
+	selectable = no
+	show_name = no
+}
+ambient_object = {
+	name = "blue_dust_cloud_object_large"
+	entity = "blue_dust_cloud_entity_large"
+	selectable = no
+	show_name = no
+}
+
+# Black Dust Cloud
+ambient_object = {
+	name = "black_dust_cloud_object_small"
+	entity = "black_dust_cloud_entity_small"
+	selectable = no
+	show_name = no
+}
+ambient_object = {
+	name = "black_dust_cloud_object_medium"
+	entity = "black_dust_cloud_entity_medium"
+	selectable = no
+	show_name = no
+}
+ambient_object = {
+	name = "black_dust_cloud_object_large"
+	entity = "black_dust_cloud_entity_large"
+	selectable = no
+	show_name = no
+}

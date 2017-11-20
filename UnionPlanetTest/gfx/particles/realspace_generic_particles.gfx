@@ -1,0 +1,54 @@
+objectTypes = {
+	
+	pdxparticle = {
+		name = "l_class_star_particle"
+		type = "l_class_star_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "azure_dust_cloud_effect"
+		type = "azure_dust_cloud_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "red_dust_cloud_effect"
+		type = "red_dust_cloud_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "green_dust_cloud_effect"
+		type = "green_dust_cloud_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "purple_dust_cloud_effect"
+		type = "purple_dust_cloud_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "orange_dust_cloud_effect"
+		type = "orange_dust_cloud_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "blue_dust_cloud_effect"
+		type = "blue_dust_cloud_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "black_dust_cloud_effect"
+		type = "black_dust_cloud_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "nova_star_outburst_effect"
+		type = "nova_star_outburst_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "nova_particle"
+		type = "nova_file"
+		
+		scale = 1.0
+	}
+}

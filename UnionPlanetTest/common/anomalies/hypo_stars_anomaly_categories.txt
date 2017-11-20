@@ -1,0 +1,51 @@
+###### STAR ANOMALY
+
+anomaly_category = {
+	key = "antimatter_star_anom"
+	desc = "antimatter_star_anom_desc"
+	picture = GFX_evt_star_red
+	level = 4
+	#risk = 25
+	
+	spawn_chance = {		
+		modifier = {
+			add = 0
+		}
+	}
+	
+	on_success = {
+	}
+
+	on_fail = {
+		ship_event = { id = hypostars.201 }
+	}
+
+	on_critical_fail = {
+		ship_event = { id = hypostars.202 }
+	}
+}
+
+
+###### PLANET ANOMALY
+
+anomaly_category = {
+	key = "antimatter_star_planet"
+	desc = "antimatter_star_planet_desc"
+	picture = GFX_evt_warm_barren
+	level = 3
+	#risk = 15
+	
+	spawn_chance = {		
+		modifier = {
+			add = 0
+		}
+	}
+	
+	on_success = {
+	}
+
+	on_fail = {
+		ship_event = { id = hypostars.203 }
+	}
+
+}

@@ -1,0 +1,3541 @@
+# Possible Deposit Variables
+# modifier - weight, will replace the weight value
+# modifier - factor, will multiply the weight value
+# resources, resource and amount
+# station = station class in orbit to gather
+# if you mix resources that are not supposed to be collected by an orbital station remember to put is_orbital_slot = no
+
+#NULL DEPOSIT MUST EXIST
+d_null_deposit = {
+	is_null = yes
+	
+	drop_weight = {
+		weight = 50
+		# modifier = {
+			# weight = 0
+			# planet = {
+				# OR = {
+					# # is_planet_class = pc_antimatter_star
+					# # is_planet_class = pc_black_hole
+					# # is_planet_class = pc_c_giant_star
+					# # is_planet_class = pc_dark_star
+					# # is_planet_class = pc_grn_star
+					# # is_planet_class = pc_lbv_blue_star
+					# # is_planet_class = pc_lbv_green_star
+					# # is_planet_class = pc_lbv_red_star
+					# # is_planet_class = pc_y_star
+					# # is_planet_class = pc_neutron_star
+					# # is_planet_class = pc_white_hole
+					# # is_planet_class = pc_nova_1
+					# # is_planet_class = pc_nova_2
+					# # is_planet_class = pc_supernova
+					# # is_planet_class = pc_pr_star 
+					# # is_planet_class = pc_s_giant_star
+					# # is_planet_class = pc_protostar
+					# # is_planet_class = pc_pulsar
+					# # is_planet_class = pc_quasi_star 
+					# # is_planet_class = pc_strange_star
+					# # is_planet_class = pc_gm_star
+					# # is_stargorange = yes
+					# # is_stargred = yes
+					# # is_stargbrown = yes
+					# # is_stargyell = yes
+					# # is_stargblue = yes
+					# # is_starwhite = yes
+					# # is_starwolf = yes
+					# # is_staryellwhite = yes
+
+					
+				# }
+			# }
+		# }
+		
+		modifier = {
+			weight = 20
+			planet = {
+				OR = {
+					#is_planet_class = pc_boson_star
+					# is_planet_class = pc_quasi_star
+					AND = {
+					is_planet_class = pc_neutron_star
+					has_planet_modifier = "pm_electroweak_star"
+					}
+				}
+			}
+		}
+		
+		# modifier = {
+			# weight = 50
+			# planet = {
+				# OR = {
+					# is_planet_class = pc_blue_dwarf_star
+					# is_planet_class = pc_black_dwarf_star
+				# }
+			# }
+		# }
+		
+		
+		# modifier = {
+			# weight = 50
+			# planet = {
+				# OR = {
+					# is_planet_class = pc_blue_dwarf_star
+					# is_planet_class = pc_black_dwarf_star
+				# }
+			# }
+		# }
+		
+		modifier = {
+			weight = 75
+			planet = {
+				OR = {
+
+					# is_planet_class = pc_a_star
+					# is_planet_class = pc_b_star
+					# is_planet_class = pc_f_star
+					# is_planet_class = pc_g_star
+					# is_planet_class = pc_k_star
+					# is_planet_class = pc_m_star
+					is_planet_class = pc_nuked
+					
+					is_planet_barren = yes
+					is_planet_barrencold = yes
+					#is_planet_planetoids = yes
+					
+					#is_planet_class = pc_carbon
+
+
+
+				}
+			}
+		}
+	}
+}
+
+union_d_null_deposit = {
+	is_null = yes
+	
+	drop_weight = {
+		weight = 10000
+	
+		modifier = {
+			weight = 10000
+			planet = {
+				is_planet_class = pc_barycenter
+			}
+		}
+	}
+}
+	
+##################################
+############ MINERALS ############
+##################################
+
+d_mineral_deposit = {
+	resources = { minerals = 1 }
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 10
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 10
+			planet = {
+				is_planet_class = pc_nuked
+			}
+		}
+		modifier = {
+			weight = 15
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					
+					is_planet_oceans = yes
+					is_planet_deserts = yes
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_savannahs = yes
+					is_planet_baseline = yes
+					is_planet_jungle = yes
+					is_planet_arids = yes
+					is_planet_alpine = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes
+					
+					is_planet_class = pc_carbon
+					
+					is_planet_frozen = yes
+
+					is_planet_planetoids = yes					
+				}
+			}
+		}
+		modifier = {
+			weight = 15
+			planet = {
+				is_planet_class = pc_c_giant_star
+			}
+		}
+	
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes					
+				}
+			}
+		}	
+	}
+}
+
+d_rich_mineral_deposit = {
+	resources = { minerals = 2 }
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 20
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 6
+			planet = {
+				OR = {
+					is_planet_class = pc_nuked
+					
+					is_planet_toxics = yes
+					is_planet_moltens = yes
+					
+					is_planet_frozen = yes
+					
+					is_planet_planetoids = yes					
+
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes
+
+				}
+			}
+		}
+		modifier = {
+			weight = 10
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_class = pc_carbon					
+				}
+			}
+		}
+		modifier = {
+			weight = 12
+			planet = {
+				OR = {
+					is_planet_barren = yes
+					is_planet_barrencold = yes
+					
+					is_planet_class = pc_carbon
+
+					is_planet_planetoids = yes
+
+
+				}
+			}
+		}
+		
+		modifier = {
+			weight = 12
+			planet = {
+				is_planet_class = pc_c_giant_star
+			}
+		}
+		
+		modifier = {
+			weight = 22
+			planet = {
+				is_asteroid = yes
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes				}
+			}
+		}	
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}		
+	}
+}
+
+d_vast_mineral_deposit = {
+	resources = { minerals = 3 }
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 30
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				OR = {
+				
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes
+					
+					is_planet_toxics = yes
+					is_planet_moltens = yes
+					
+					is_planet_frozen = yes
+					
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					is_planet_class = pc_carbon
+					
+					is_planet_planetoids = yes
+				}
+			}
+		}
+		modifier = {
+			weight = 3
+			planet = {
+				is_asteroid = yes
+			}
+		}
+		
+		modifier = {
+			weight = 2
+			planet = {
+				is_planet_class = pc_c_giant_star
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			planet = {
+				is_asteroid = yes
+				is_in_cluster = resource_cluster_0
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					is_planet_class = pc_carbon
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}		
+	}
+}
+
+d_immense_mineral_deposit = {
+	resources = { minerals = 4 }
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes
+					
+					is_planet_toxics = yes
+					is_planet_moltens = yes
+
+					
+					is_planet_frozen = yes
+
+					is_planet_class = pc_carbon					
+
+					is_planet_planetoids = yes					
+				}
+			}
+		}
+		modifier = {
+			weight = 1.5
+			planet = {
+				is_asteroid = yes
+			}
+		}
+		modifier = {
+			factor = 0.5
+			planet = {
+				is_asteroid = yes
+				is_in_cluster = resource_cluster_0
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_class = pc_carbon
+					
+					is_planet_class = pc_vaccfrozenplanetoid
+
+
+				}
+			}
+		}
+		
+		modifier = {
+			weight = 35
+			planet = {
+				is_planet_class = pc_c_giant_star
+			}
+		}
+		
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}		
+	}
+}
+
+##################################
+######### MIXED DEPOSITS #########
+##################################
+
+union_d_mineral_energy_deposit = {
+	resources = {
+		energy = 3
+		minerals = 2
+	}
+	
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 20
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 20
+			planet = {
+				is_planet_class = pc_s_giant_star
+			}
+		}
+	}
+}
+
+unionsuper_d_physics_energy_deposit = {
+	resources = {
+		energy = 5
+		physics_research = 2
+	}
+	
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 40
+			planet = {
+				OR = {
+					is_supergiantstars = yes
+					is_holebwstars = yes
+					is_wolfstarss = yes
+				}
+			}
+		}
+	}
+}
+
+unionhyper_d_physics_energy_deposit = {
+	resources = {
+		energy = 7
+		physics_research = 3
+	}
+	
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 40
+			planet = {
+				OR = {
+					is_hypergiantstars = yes
+					is_holebwstars = yes
+					is_wolfstarss = yes
+				}
+			}
+		}
+	}
+}
+
+unionstd_d_physics_energy_deposit = {
+	resources = {
+		energy = 2
+		physics_research = 1
+	}
+	
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 40
+			planet = {
+				OR = {
+					is_binarystarsg = yes
+					is_stdstar = yes
+					is_wolfstarss = yes
+				}
+			}
+		}
+	}
+}
+
+uniong_d_physics_energy_deposit = {
+	resources = {
+		energy = 3
+		physics_research = 2
+	}
+	
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 40
+			planet = {
+				OR = {					
+					is_giantstars = yes					
+					is_wolfstarss = yes
+				}
+			}
+		}
+	}
+}
+
+uniondwarf_d_physics_energy_deposit = {
+	resources = {
+		energy = 1
+		physics_research = 1
+	}
+	
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 40
+			planet = {
+				OR = {
+					is_dwarfstar = yes				
+					is_wolfstarss = yes
+				}
+			}
+		}
+	}
+}
+
+
+unionsuper_d_engineering_energy_deposit = {
+	resources = {
+		energy = 5
+		engineering_research = 2
+	}
+	
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 40
+			planet = {
+				OR = {
+					is_supergiantstars = yes
+					is_holebwstars = yes
+					is_wolfstarss = yes
+				}
+			}
+		}
+	}
+}
+
+unionhyper_d_engineering_energy_deposit = {
+	resources = {
+		energy = 7
+		engineering_research = 3
+	}
+	
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 40
+			planet = {
+				OR = {
+					is_hypergiantstars = yes
+					is_holebwstars = yes
+					is_wolfstarss = yes
+				}
+			}
+		}
+	}
+}
+
+unionstd_d_engineering_energy_deposit = {
+	resources = {
+		energy = 2
+		engineering_research = 1
+	}
+	
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 40
+			planet = {
+				OR = {
+					is_binarystarsg = yes
+					is_stdstar = yes
+					is_wolfstarss = yes
+				}
+			}
+		}
+	}
+}
+
+uniong_d_engineering_energy_deposit = {
+	resources = {
+		energy = 3
+		engineering_research = 2
+	}
+	
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 40
+			planet = {
+				OR = {					
+					is_giantstars = yes					
+					is_wolfstarss = yes
+				}
+			}
+		}
+	}
+}
+
+uniondwarf_d_engineering_energy_deposit = {
+	resources = {
+		energy = 1
+		engineering_research = 1
+	}
+	
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 40
+			planet = {
+				OR = {
+					is_dwarfstar = yes				
+					is_wolfstarss = yes
+				}
+			}
+		}
+	}
+}
+	
+	
+	
+
+d_mineral_energy_deposit = {
+	resources = {
+		energy = 1
+		minerals = 1
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 20
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					
+					is_planet_class = pc_carbon
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes
+					
+					is_planet_toxics = yes
+					is_planet_moltens = yes
+
+					is_planet_planetoids = yes
+					
+					is_planet_frozen = yes
+
+					
+
+
+				}
+			}
+		}	
+		modifier = {
+			factor = 1.25
+			planet = {
+				OR = {
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_class = pc_carbon
+				}
+			}
+		}
+	}
+}
+
+d_rich_mineral_energy_deposit = {
+	resources = {
+		energy = 2
+		minerals = 2
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 60
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes
+					
+					is_planet_class = pc_carbon
+					
+
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}	
+		modifier = {
+			factor = 1.25
+			planet = {
+				OR = {					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+				}
+			}
+		}		
+	}
+}
+
+d_mineral_food_deposit = {
+	resources = {
+		food = 1
+		minerals = 1
+	}
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			planet = {
+				OR = {
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes					
+
+				}
+			}
+		}			
+	}
+}
+
+d_rich_food_mineral_deposit = {
+	resources = {
+		food = 2
+		minerals = 2
+	}
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}
+		modifier = {
+			factor = 1.25
+			planet = {
+				OR = {
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes					
+				}
+			}
+		}			
+	}
+}
+
+##################################
+######### ENERGY CREDITS #########
+##################################
+
+d_energy_deposit = {
+	resources = { energy = 1 }
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 10
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 15
+			planet = {
+				OR = {
+				
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes
+
+					is_planet_planetoids = yes
+					
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine					
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+				}
+			}
+		}			
+	}
+}
+
+d_rich_energy_deposit = {
+	resources = { energy = 2 }
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 20
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 3
+			planet = {
+				is_planet_moltens = yes
+			}
+		}
+		modifier = {
+			weight = 10
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes
+
+					is_planet_planetoids = yes
+					
+					is_planet_frozen = yes
+					
+					is_planet_class = pc_carbon
+				}
+			}
+		}
+		modifier = {
+			weight = 12
+			planet = {
+				OR = {					
+					is_dwarfstar = yes
+				}
+			}
+		}
+		modifier = {
+			weight = 25
+			planet = {
+				is_planet_gasgiants = yes
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+				
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+				}
+			}
+		}	
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}		
+	}
+}
+
+d_vast_energy_deposit = {
+	resources = { energy = 3 }
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 30
+	}
+	
+	drop_weight = {
+		weight = 0		
+		modifier = {
+			weight = 2
+			planet = {
+				OR = {
+					is_stdstar = yes
+				}
+			}
+		}
+		
+		modifier = {
+			weight = 12
+			planet = {
+				AND = {
+					is_planet_class = pc_blue_dwarf_star
+				}
+			}
+		}
+		
+		
+		modifier = {
+			weight = 1
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes
+
+					
+					is_planet_class = pc_carbon
+				}
+			}
+		}		
+		modifier = {
+			weight = 8
+			planet = {
+				is_planet_gasgiants = yes
+			}
+		}	
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes				
+				}
+			}
+		}	
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}		
+	}
+}
+
+d_immense_energy_deposit = {
+	resources = { energy = 4 }
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0		
+		modifier = {
+			weight = 1
+			planet = {
+				OR = {
+					is_giantstars = yes
+				}
+			}
+		}
+		
+		modifier = {
+			weight = 2
+			planet = {
+				is_planet_class = pc_quasi_star
+			}
+		}
+		
+		modifier = {
+			weight = 0.5
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes
+				}
+			}
+		}		
+		modifier = {
+			weight = 4
+			planet = {
+				is_planet_gasgiants = yes
+			}
+		}	
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+										
+
+				}
+			}
+		}	
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}		
+	}
+}
+
+unionsupergiants_d_immense_energy_deposit = {
+	resources = { energy = 6 }
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 15
+			planet = {
+				is_supergiantstars = yes
+				is_wolfstarss = yes
+				is_binarystarsg = yes				
+			}
+		}
+	}
+}
+
+unionhg_d_immense_energy_deposit = {
+	resources = { energy = 7 }
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 15
+			planet = {
+				is_hypergiantstars = yes			
+			}
+		}
+	}
+}
+
+d_hypo_stars_humongous_energy_deposit = {
+	resources = { energy = 18 }
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 60
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 10
+			planet = {
+				is_holebwstars = yes
+			}
+		}
+	}
+}
+
+
+##################################
+######### 		FOOD 	 #########
+##################################
+
+d_farmland_deposit = {
+	resources = { food = 1 }
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 15
+			planet = {
+				OR = {
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_gaia
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes				
+					
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes		
+					
+				}
+			}
+		}			
+	}
+}
+
+d_rich_farmland_deposit = {
+	resources = { food = 2 }
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 10
+			planet = {
+				OR = {
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_gaia
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes						
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes					
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}			
+	}
+}
+
+d_vast_farmland_deposit = {
+	resources = { food = 3 }
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				OR = {
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_gaia
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes						
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+				}
+			}
+		}	
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}			
+	}
+}
+
+d_immense_farmland_deposit = {
+	resources = { food = 4 }
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			planet = {
+				OR = {
+					
+					is_planet_class = pc_ringworld_habitable
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes	
+					
+					
+					is_planet_class = pc_gaia					
+					
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+				
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes	
+					
+				}
+			}
+		}	
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}			
+	}
+}
+
+##################################
+######### 	SOCIETY 	 #########
+##################################
+
+d_society_deposit = {
+	resources = { society_research = 1 }
+	station = shipclass_research_station 
+	orbital_weight = {
+		weight = 10
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 14
+			planet = {
+				is_planet_class = pc_nuked
+			}
+		}			
+		modifier = {
+			weight = 7
+			planet = {
+				OR = {
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					is_planet_class = pc_gaia
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_planetoids = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes
+					
+					
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes				
+					
+				}
+			}
+		}
+	}
+}
+
+d_rich_society_deposit = {
+	resources = { society_research = 2 }
+	station = shipclass_research_station 
+	orbital_weight = {
+		weight = 20
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			planet = {
+				is_planet_class = pc_nuked
+			}
+		}			
+		modifier = {
+			weight = 3
+			planet = {
+				OR = {					
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					is_planet_class = pc_gaia
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_planetoids = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes					
+					
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+				}
+			}
+		}
+		modifier = {
+			weight = 4
+			planet = {
+			
+				is_planet_greenhousehot = yes
+				is_planet_greenhousecold = yes	
+				
+				is_planet_toxics = yes				
+
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}			
+	}
+}
+
+d_vast_society_deposit = {
+	resources = { society_research = 3 }
+	station = shipclass_research_station 
+	orbital_weight = {
+		weight = 30
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			planet = {
+				OR = {
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes	
+						
+					is_planet_toxics = yes	
+					
+					is_planet_class = pc_gaia
+				}
+			}
+		}
+		modifier = {
+			weight = 1
+			planet = {
+				AND = {
+					OR = {
+						is_planet_class = pc_ringworld_habitable
+						is_planet_class = pc_machine
+						
+						is_planet_arctic = yes
+						is_planet_tundra = yes
+						is_planet_alpine = yes
+						
+						is_planet_jungle = yes					
+						is_planet_oceans = yes
+						
+						is_planet_planetoids = yes
+						
+						is_planet_baseline = yes
+						
+						is_planet_arids = yes
+						is_planet_deserts = yes
+						is_planet_savannahs = yes
+						
+						is_planet_greenhousehot = yes
+						is_planet_greenhousecold = yes					
+						
+					}
+					OR = {					
+						has_planet_modifier = "pm_titanic_life"
+						has_planet_modifier = "pm_dangerous_wildlife"
+						has_planet_modifier = "pm_natural_beauty"
+						has_planet_modifier = "pm_atmospheric_aphrodisiac"
+						has_planet_modifier = "pm_atmospheric_hallucinogen"
+						has_planet_modifier = "pm_lush"	
+					}
+				}
+			}
+		}
+		modifier = {
+			weight = 2
+			planet = {
+				is_planet_class = pc_nuked
+			}
+		}
+		modifier = {
+			factor = 3
+			planet = {
+				OR = {					
+					has_planet_modifier = "pm_titanic_life"
+					has_planet_modifier = "pm_dangerous_wildlife"
+					has_planet_modifier = "pm_natural_beauty"
+					has_planet_modifier = "pm_atmospheric_aphrodisiac"
+					has_planet_modifier = "pm_atmospheric_hallucinogen"
+					has_planet_modifier = "pm_lush"	
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}		
+	}
+}
+
+d_immense_society_deposit = {
+	resources = { society_research = 4 }
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			planet = {
+				is_planet_class = pc_nuked
+			}
+		}			
+		modifier = {
+			weight = 2
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}
+		modifier = {
+			weight = 35
+			planet = {
+				AND = {
+					OR = {
+						
+						is_planet_class = pc_ringworld_habitable
+						is_planet_class = pc_machine
+						
+						is_planet_arctic = yes
+						is_planet_tundra = yes
+						is_planet_alpine = yes
+						
+						is_planet_jungle = yes					
+						is_planet_oceans = yes
+						is_planet_baseline = yes
+						
+						is_planet_planetoids = yes
+						
+						
+						is_planet_arids = yes
+						is_planet_deserts = yes
+						is_planet_savannahs = yes
+						
+						is_planet_greenhousehot = yes
+						is_planet_greenhousecold = yes							
+					}
+					OR = {					
+						has_planet_modifier = "pm_titanic_life"
+						has_planet_modifier = "pm_dangerous_wildlife"
+						has_planet_modifier = "pm_natural_beauty"
+						has_planet_modifier = "pm_atmospheric_aphrodisiac"
+						has_planet_modifier = "pm_atmospheric_hallucinogen"
+						has_planet_modifier = "pm_lush"	
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					has_deposit = "d_immense_mineral_deposit"
+					has_deposit = "d_immense_energy_deposit"
+					has_deposit = "d_immense_society_deposit"
+					has_deposit = "d_immense_physics_deposit"
+					has_deposit = "d_immense_engineering_deposit"
+					has_strategic_resource = yes
+				}
+			}		
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}		
+	}
+}
+
+##################################
+######### 	 PHYSICS 	 #########
+##################################
+
+d_physics_deposit = {
+	resources = { physics_research = 1 }
+	station = shipclass_research_station 
+	orbital_weight = {
+		weight = 10
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 16
+			planet = {
+				is_planet_class = pc_nuked
+			}
+		}
+		modifier = {
+			weight = 12
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes	
+					
+					is_planet_planetoids = yes
+					
+					
+					is_planet_class = pc_carbon			
+							
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes			
+					
+					
+				}
+			}
+		}			
+	}
+}
+
+d_rich_physics_deposit = {
+	resources = { physics_research = 2 }
+	station = shipclass_research_station 
+	orbital_weight = {
+		weight = 20
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 7
+			planet = {
+				is_planet_class = pc_nuked
+			}
+		}		
+		modifier = {
+			weight = 5
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes	
+					
+					is_planet_planetoids = yes					
+					
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}		
+	}
+}
+
+d_vast_physics_deposit = {
+	resources = { physics_research = 3 }
+	station = shipclass_research_station 
+	orbital_weight = {
+		weight = 30
+	}
+	
+	drop_weight = {
+		weight = 0	
+		
+		modifier = {
+			weight = 4
+			planet = {
+				is_planet_class = pc_nuked
+			}
+		}
+		modifier = {
+			weight = 2
+			planet = {
+				AND = {
+					OR = {
+						is_planet_class = pc_gaia
+						is_planet_class = pc_ringworld_habitable
+						is_planet_class = pc_machine
+						
+						is_planet_arctic = yes
+						is_planet_tundra = yes
+						is_planet_alpine = yes
+						
+						is_planet_jungle = yes					
+						is_planet_oceans = yes
+						is_planet_baseline = yes
+						
+						is_planet_arids = yes
+						is_planet_deserts = yes
+						is_planet_savannahs = yes
+						
+						is_planet_greenhousehot = yes
+						is_planet_greenhousecold = yes	
+						
+						is_planet_planetoids = yes	
+					
+						
+						
+						
+						is_planet_class = pc_carbon						
+					
+					}
+					OR = {
+						has_planet_modifier = "pm_chthonian_planet"
+						has_planet_modifier = "pm_wild_storms"
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}		
+	}
+}
+
+d_immense_physics_deposit = {
+	resources = { physics_research = 4 }
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1.5
+			planet = {
+				is_planet_class = pc_nuked
+			}
+		}
+		modifier = {
+			weight = 25
+			planet = {
+				OR = {
+					is_planet_class = pc_black_hole
+					is_planet_class = pc_pulsar
+					is_planet_class = pc_neutron_star
+				}
+			}
+		}
+		modifier = {
+			weight = 40
+			planet = {
+				AND = {
+					OR = {
+						is_planet_class = pc_gaia
+						is_planet_class = pc_ringworld_habitable
+						is_planet_class = pc_machine
+						
+						is_planet_arctic = yes
+						is_planet_tundra = yes
+						is_planet_alpine = yes
+						
+						is_planet_jungle = yes					
+						is_planet_oceans = yes
+						is_planet_baseline = yes
+						
+						is_planet_arids = yes
+						is_planet_deserts = yes
+						is_planet_savannahs = yes
+						
+						is_planet_greenhousehot = yes
+						is_planet_greenhousecold = yes	
+						
+						is_planet_planetoids = yes	
+					
+						
+						
+						
+						is_planet_class = pc_carbon	
+						
+						
+					}
+					OR = {
+						has_planet_modifier = "pm_chthonian_planet"
+						has_planet_modifier = "pm_wild_storms"
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					has_deposit = "d_immense_mineral_deposit"
+					has_deposit = "d_immense_energy_deposit"
+					has_deposit = "d_immense_society_deposit"
+					has_deposit = "d_immense_physics_deposit"
+					has_deposit = "d_immense_engineering_deposit"
+					has_strategic_resource = yes
+				}
+			}		
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}		
+	}
+}
+
+
+uniondwarfd_immense_physics_deposit = {
+	resources = { physics_research = 1 }
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1.5
+			planet = {
+				is_dwarfstar = yes
+			}
+		}
+	}
+}
+
+unionstd_immense_physics_deposit = {
+	resources = { physics_research = 2 }
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1.5
+			planet = {
+				is_stdstar = yes
+			}
+		}
+	}
+}
+
+uniong_immense_physics_deposit = {
+	resources = { physics_research = 3 }
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1.5
+			planet = {
+				OR = {
+					is_giantstars = yes
+					#Dead Star
+					is_planet_class = pc_y_dwarf					
+					#Carbon Star
+					is_planet_class = pc_c_giant_star
+				}
+			}
+		}
+	}
+}
+
+unionsggg_immense_physics_deposit = {
+	resources = { physics_research = 4 }
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1.5
+			planet = {
+				OR = {
+					is_supergiantstars = yes
+					is_wolfstarss = yes				
+					is_binarystarsg = yes
+				}
+			}
+		}
+	}
+}
+
+unionshhgg_immense_physics_deposit = {
+	resources = { physics_research = 6 }
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1.5
+			planet = {
+				OR = {
+					is_hypergiantstars = yes
+				}
+			}
+		}
+	}
+}
+
+##################################
+#########  ENGINEERING   #########
+##################################
+
+d_engineering_deposit = {
+	resources = { engineering_research = 1 }
+	station = shipclass_research_station 
+	orbital_weight = {
+		weight = 10
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 14
+			planet = {
+				is_planet_class = pc_nuked
+			}
+		}		
+		modifier = {
+			weight = 6
+			planet = {
+				is_planet_class = pc_tropical
+			}
+		}
+		modifier = {
+			weight = 7
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes	
+					
+					is_planet_planetoids = yes	
+					
+						
+						
+						
+					is_planet_class = pc_carbon						
+					
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes					
+					
+				}
+			}
+		}			
+	}
+}
+
+d_rich_engineering_deposit = {
+	resources = { engineering_research = 2 }
+	station = shipclass_research_station 
+	orbital_weight = {
+		weight = 20
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 3
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					
+					
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes
+					
+					is_planet_jungle = yes					
+					is_planet_oceans = yes
+					is_planet_baseline = yes
+					
+					is_planet_arids = yes
+					is_planet_deserts = yes
+					is_planet_savannahs = yes
+					
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes	
+					
+					is_planet_planetoids = yes				
+						
+						
+						
+					is_planet_class = pc_carbon		
+					
+					is_planet_class = pc_nuked					
+					
+				}
+			}
+		}
+		modifier = {
+			weight = 4
+			planet = {
+				OR = {
+					is_planet_planetoids = yes
+					is_planet_gasgiants = yes
+					is_planet_frozen = yes
+
+
+
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				OR = {
+					is_planet_arctic = yes
+					is_planet_tundra = yes
+					is_planet_alpine = yes					
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}		
+	}
+}
+
+d_vast_engineering_deposit = {
+	resources = { engineering_research = 3 }
+	station = shipclass_research_station 
+	orbital_weight = {
+		weight = 30
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			planet = {
+				OR = {
+					is_planet_planetoids = yes
+					is_planet_gasgiants = yes
+					is_planet_frozen = yes
+
+
+				}
+			}
+		}
+		modifier = {
+			weight = 10
+			planet = {
+				AND = {
+					is_planet_moltens = yes
+
+					has_planet_modifier = "pm_chthonian_planet"
+				}
+			}
+		}
+		modifier = {
+			weight = 2
+			planet = {
+				AND = {
+					OR = {
+						is_planet_class = pc_gaia
+						is_planet_class = pc_ringworld_habitable
+						is_planet_class = pc_machine
+						
+						is_planet_arctic = yes
+						is_planet_tundra = yes
+						is_planet_alpine = yes
+						
+						is_planet_jungle = yes					
+						is_planet_oceans = yes
+						is_planet_baseline = yes
+						
+						is_planet_arids = yes
+						is_planet_deserts = yes
+						is_planet_savannahs = yes
+						
+						is_planet_greenhousehot = yes
+						is_planet_greenhousecold = yes	
+						
+						is_planet_planetoids = yes	
+						
+
+					}
+					has_planet_modifier = "pm_unstable_tectonics"
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}		
+	}
+}
+
+d_immense_engineering_deposit = {
+	resources = { engineering_research = 4 }
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			planet = {
+				is_planet_class = pc_nuked
+			}
+		}
+		modifier = {
+			weight = 5
+			planet = {
+				AND = {
+					is_planet_moltens = yes
+
+					has_planet_modifier = "pm_chthonian_planet"
+				}
+			}
+		}
+		modifier = {
+			weight = 35
+			planet = {
+				AND = {
+					OR = {
+						is_planet_class = pc_gaia
+						is_planet_class = pc_ringworld_habitable
+						is_planet_class = pc_machine
+						
+						is_planet_arctic = yes
+						is_planet_tundra = yes
+						is_planet_alpine = yes
+						
+						is_planet_jungle = yes					
+						is_planet_oceans = yes
+						is_planet_baseline = yes
+						
+						is_planet_arids = yes
+						is_planet_deserts = yes
+						is_planet_savannahs = yes
+						
+						is_planet_greenhousehot = yes
+						is_planet_greenhousecold = yes	
+						
+						is_planet_planetoids = yes
+						
+					
+					}
+					has_planet_modifier = "pm_unstable_tectonics"
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					has_deposit = "d_immense_mineral_deposit"
+					has_deposit = "d_immense_energy_deposit"
+					has_deposit = "d_immense_society_deposit"
+					has_deposit = "d_immense_physics_deposit"
+					has_deposit = "d_immense_engineering_deposit"
+					has_strategic_resource = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}		
+	}
+}
+
+uniondwarfd_immense_engineering_deposit = {
+	resources = { engineering_research = 1 }
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1.5
+			planet = {
+				is_dwarfstar = yes
+			}
+		}
+	}
+}
+
+unionstd_immense_engineering_deposit = {
+	resources = { engineering_research = 2 }
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1.5
+			planet = {
+				is_stdstar = yes
+			}
+		}
+	}
+}
+
+uniong_immense_engineering_deposit = {
+	resources = { engineering_research = 3 }
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1.5
+			planet = {
+				OR = {
+					is_giantstars = yes
+					#Dead Star
+					is_planet_class = pc_y_dwarf				
+					#Carbon Star
+					is_planet_class = pc_c_giant_star
+				}
+			}
+		}
+	}
+}
+
+unionsggg_immense_engineering_deposit = {
+	resources = { engineering_research = 4 }
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1.5
+			planet = {
+				OR = {
+					is_supergiantstars = yes
+					is_wolfstarss = yes				
+					is_binarystarsg = yes
+				}
+			}
+		}
+	}
+}
+
+unionshhggg_immense_engineering_deposit = {
+	resources = { engineering_research = 6 }
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1.5
+			planet = {
+				OR = {
+					is_hypergiantstars = yes
+				}
+			}
+		}
+	}
+}
+
+##################################
+###### EVENT & DISCOVERY   #######
+##################################
+
+d_enormous1_engineering_deposit = {
+	resources = { engineering_research = 6 }
+	station = shipclass_research_station
+	orbital_weight = { weight = 0 }
+	drop_weight = { weight = 0 }
+}
+
+d_enormous2_engineering_deposit = {
+	resources = { engineering_research = 8 }
+	station = shipclass_research_station
+	orbital_weight = { weight = 0 }
+	drop_weight = { weight = 0 }
+}
+
+d_enormous3_engineering_deposit = {
+	resources = { engineering_research = 10 }
+	station = shipclass_research_station
+	orbital_weight = { weight = 0 }
+	drop_weight = { weight = 0 }
+}
+
+d_enormous1_physics_deposit = {
+	resources = { physics_research = 6 }
+	station = shipclass_research_station
+	orbital_weight = { weight = 0 }
+	drop_weight = { weight = 0 }
+}
+
+d_enormous2_physics_deposit = {
+	resources = { physics_research = 8 }
+	station = shipclass_research_station
+	orbital_weight = { weight = 0 }
+	drop_weight = { weight = 0 }
+}
+
+d_enormous3_physics_deposit = {
+	resources = { physics_research = 10 }
+	station = shipclass_research_station
+	orbital_weight = { weight = 0 }
+	drop_weight = { weight = 0 }
+}
+
+d_enormous1_society_deposit = {
+	resources = { society_research = 6 }
+	station = shipclass_research_station
+	orbital_weight = { weight = 0 }
+	drop_weight = { weight = 0 }
+}
+
+d_enormous2_society_deposit = {
+	resources = { society_research = 8 }
+	station = shipclass_research_station
+	orbital_weight = { weight = 0 }
+	drop_weight = { weight = 0 }
+}
+
+d_enormous3_society_deposit = {
+	resources = { society_research = 10 }
+	station = shipclass_research_station
+	orbital_weight = { weight = 0 }
+	drop_weight = { weight = 0 }
+}
+
+d_enormous1_mineral_deposit = {
+	resources = { minerals = 6 }
+	station = shipclass_mining_station
+	orbital_weight = { weight = 0 }
+	drop_weight = { weight = 0 }
+}
+
+d_enormous2_mineral_deposit = {
+	resources = { minerals = 8 }
+	station = shipclass_mining_station
+	orbital_weight = { weight = 0 }
+	drop_weight = { weight = 0 }
+}
+
+d_enormous3_mineral_deposit = {
+	resources = { minerals = 10 }
+	station = shipclass_mining_station
+	orbital_weight = { weight = 0 }
+	drop_weight = { weight = 0 }
+}
+
+d_worm_deposit = {
+	resources = { society_research = 20 }
+	station = shipclass_research_station
+	orbital_weight = { weight = 0 }
+	drop_weight = { weight = 0 }
+}
+
+
+##################################
+########## TERRAFORMING ##########
+##################################
+
+d_terraforming_gas_deposit = {
+	resources = {
+		sr_terraform_gases = 1
+		energy = 3
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 55
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 0.5
+			planet = {
+				is_planet_gasgiants = yes
+
+			}
+		}
+		modifier = {
+			factor = 2
+			planet = {
+				AND = {
+					is_planet_gasgiants = yes
+					is_inside_nebula = yes
+				}
+			}			
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					has_deposit = "d_immense_mineral_deposit"
+					has_deposit = "d_immense_energy_deposit"
+					has_deposit = "d_immense_society_deposit"
+					has_deposit = "d_immense_physics_deposit"
+					has_deposit = "d_immense_engineering_deposit"
+					has_strategic_resource = yes
+				}
+			}
+		}
+	}
+}
+
+d_terraforming_fluid_deposit = {
+	resources = {
+		sr_terraform_liquids = 1
+		energy = 3
+	}
+	station = shipclass_mining_station 
+	orbital_weight = {
+		weight = 55
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 0.5
+			planet = {
+				is_planet_frozen = yes
+
+			}
+		}
+		modifier = {
+			factor = 2
+			planet = {
+				AND = {
+					is_planet_frozen = yes
+					is_inside_nebula = yes
+				}
+			}			
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					has_deposit = "d_immense_mineral_deposit"
+					has_deposit = "d_immense_energy_deposit"
+					has_deposit = "d_immense_society_deposit"
+					has_deposit = "d_immense_physics_deposit"
+					has_deposit = "d_immense_engineering_deposit"
+					has_strategic_resource = yes
+				}
+			}
+		}
+	}
+
+}
+
+#######################################
+######### STRATEGIC RESOURCES #########
+#######################################
+
+#############
+# Clustered #
+#############
+@clusterOrbitalWeight = 20
+
+d_garanthium_deposit = {
+	resources = {
+		minerals = 3
+		sr_garanthium = 1
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = @clusterOrbitalWeight
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				AND = {
+					is_asteroid = yes
+					has_strategic_resource = no
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			planet = {
+				is_inside_nebula = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				NOT = { is_in_cluster = resource_cluster_0 }
+			}
+		}
+	}
+}
+
+d_lythuric_gas_deposit = {
+	resources = { 
+		physics_research = 1
+		society_research = 1
+		sr_lythuric = 1
+	}
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = @clusterOrbitalWeight
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				AND = {
+					is_planet_gasgiants = yes
+					has_strategic_resource = no
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			planet = {
+				is_inside_nebula = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				NOT = { is_in_cluster = resource_cluster_1 }
+			}
+		}
+	}
+}
+
+d_engos_deposit = {
+	resources = {
+		society_research = 1
+		physics_research = 1
+		sr_engos = 1
+	}
+	station = shipclass_research_station	
+	orbital_weight = {
+		weight = @clusterOrbitalWeight
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				AND = {
+					OR = {
+						is_planet_gasgiants = yes
+
+						is_planet_greenhousehot = yes
+						is_planet_greenhousecold = yes
+						
+						is_planet_toxics = yes
+
+					}
+					has_strategic_resource = no
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				NOT = { is_in_cluster = resource_cluster_2 }
+			}
+		}
+	}
+}
+
+d_teldar_deposit = {
+	resources = {
+		engineering_research = 1
+		society_research = 1
+		sr_teldar = 1
+	}
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = @clusterOrbitalWeight
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				AND = {
+					OR = {
+						is_asteroid = yes
+						is_planet_planetoids = yes
+					
+						is_planet_frozen = yes
+
+						
+					}
+					has_strategic_resource = no
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			planet = {
+				is_inside_nebula = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				NOT = { is_in_cluster = resource_cluster_3 }
+			}
+		}
+	}
+}
+
+d_yuranic_deposit = {
+	resources = {
+		society_research = 1
+		engineering_research = 1
+		sr_yuranic = 1
+	}
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = @clusterOrbitalWeight
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				AND = {
+					OR = {
+						is_asteroid = yes
+						is_planet_planetoids = yes
+					
+						is_planet_frozen = yes						
+					}
+					has_strategic_resource = no
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			planet = {
+				is_inside_nebula = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				NOT = { is_in_cluster = resource_cluster_4 }
+			}
+		}
+	}
+}
+
+d_orillium_deposit = {
+	resources = {
+		engineering_research = 2
+		sr_orillium = 1
+	}
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = @clusterOrbitalWeight
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				AND = {
+					is_asteroid = yes
+					has_strategic_resource = no
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				NOT = { is_in_cluster = resource_cluster_5 }
+			}
+		}
+	}
+}
+
+#################
+# Non-clustered #
+#################
+
+d_pitharan_deposit = {
+	resources = {
+		society_research = 1
+		engineering_research = 1
+		sr_pitharan = 1
+	}
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = @clusterOrbitalWeight
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 0.5
+			planet = {
+				OR = {
+					is_planet_greenhousehot = yes
+					is_planet_greenhousecold = yes
+					
+					is_planet_toxics = yes
+					is_planet_gasgiants = yes
+
+
+				}
+			}
+		}
+		modifier = {
+			factor = 0.25
+			solar_system = {
+				NOT =  {
+					OR = {
+						is_hypergiantstarsst = yes
+						is_supergiantstarsst = yes
+						is_giantstarsst = yes
+						is_stdstarst = yes
+						is_dwarfstarst = yes
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					has_deposit = "d_immense_mineral_deposit"
+					has_deposit = "d_immense_energy_deposit"
+					has_deposit = "d_immense_society_deposit"
+					has_deposit = "d_immense_physics_deposit"
+					has_deposit = "d_immense_engineering_deposit"
+					has_strategic_resource = yes
+				}
+			}
+		}		
+	}
+}
+
+
+d_neutronium_deposit = {
+	resources = { 
+		engineering_research = 5
+		sr_neutronium = 1
+	}
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			planet = {
+				AND = {
+					is_planet_class = pc_neutron_star
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			planet = {
+				AND = {
+					is_planet_class = pc_neutron_star
+					is_inside_nebula = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					has_deposit = "d_immense_mineral_deposit"
+					has_deposit = "d_immense_energy_deposit"
+					has_deposit = "d_immense_society_deposit"
+					has_deposit = "d_immense_physics_deposit"
+					has_deposit = "d_immense_engineering_deposit"
+					has_strategic_resource = yes
+				}
+			}
+		}
+	}
+}
+
+d_living_metal_deposit = {
+	resources = { 
+		engineering_research = 5
+		sr_living_metal = 1
+	}
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 100
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_dark_matter_deposit = {
+	resources = {
+		physics_research = 5
+		sr_dark_matter = 2
+	}
+	station = shipclass_research_station 
+	orbital_weight = {
+		weight = 100
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 40
+			planet = {
+				AND = {
+					OR = {
+						is_planet_class = pc_black_hole
+						is_planet_class = pc_dark_star
+						is_planet_class = pc_antimatter_star
+					}
+					has_strategic_resource = no
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					has_deposit = "d_immense_mineral_deposit"
+					has_deposit = "d_immense_energy_deposit"
+					has_deposit = "d_immense_society_deposit"
+					has_deposit = "d_immense_physics_deposit"
+					has_deposit = "d_immense_engineering_deposit"
+				}
+			}
+		}
+	}
+}
+
+d_betharian_deposit = {
+	resources = {
+		energy = 2
+		sr_betharian = 1
+	}
+	station = shipclass_mining_station
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				AND = {
+					OR = {
+						is_planet_planetoids = yes
+						is_planet_arctic = yes
+						is_planet_tundra = yes
+						is_planet_alpine = yes
+						
+						is_planet_jungle = yes					
+						is_planet_oceans = yes
+						is_planet_baseline = yes
+						
+						is_planet_arids = yes
+						is_planet_deserts = yes
+						is_planet_savannahs = yes
+						
+						is_planet_greenhousehot = yes
+						is_planet_greenhousecold = yes
+						
+						is_planet_class = pc_ringworld_habitable
+						is_planet_class = pc_machine				
+
+					}
+					has_owner = no
+				}
+			}
+		}
+		modifier = {
+			weight = 5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}		
+		modifier = {
+			factor = 5
+			planet = {
+				OR = {
+					has_planet_modifier = "pm_lush"
+					has_planet_modifier = "pm_dangerous_wildlife"
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				solar_system = {
+					OR = {
+						has_star_flag = empire_home_system
+						has_star_flag = sol_system
+						has_star_flag = deneb_system
+					}
+				}
+			}
+		}			
+	}
+}
+
+d_alien_pets_deposit = {
+	resources = {
+		society_research = 3
+		sr_alien_pets = 1
+	}
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				AND = {
+					OR = {
+						
+						is_planet_class = pc_ringworld_habitable
+						
+						is_planet_arctic = yes
+						is_planet_tundra = yes
+						is_planet_alpine = yes
+						
+						is_planet_jungle = yes					
+						is_planet_oceans = yes
+						is_planet_baseline = yes
+						
+						is_planet_arids = yes
+						is_planet_deserts = yes
+						is_planet_savannahs = yes
+						
+						is_planet_greenhousehot = yes
+						is_planet_greenhousecold = yes				
+
+					}
+					has_owner = no
+				}
+			}
+		}
+		modifier = {
+			weight = 5
+			planet = {
+				is_planet_class = pc_gaia
+			}
+		}		
+		modifier = {
+			factor = 5
+			planet = {
+				OR = {
+					has_planet_modifier = "pm_lush"
+					has_planet_modifier = "pm_dangerous_wildlife"
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				solar_system = {
+					OR = {
+						has_star_flag = empire_home_system
+						has_star_flag = sol_system
+						has_star_flag = deneb_system
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				has_deposit = "d_alien_pets_deposit"
+			}
+		}		
+	}
+}
+
+d_satramene_deposit = {
+	resources = { 
+		energy = 4
+		sr_satramene = 1
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 0.5
+			planet = {
+				OR = {
+					is_planet_toxics = yes
+					is_planet_gasgiants = yes
+
+				}
+			}
+		}
+		modifier = {
+			factor = 0.25
+			solar_system = {
+				NOT =  {
+					OR = {
+						is_hypergiantstarsst = yes
+						is_supergiantstarsst = yes
+						is_giantstarsst = yes
+						is_stdstarst = yes
+						is_dwarfstarst = yes
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					has_deposit = "d_immense_mineral_deposit"
+					has_deposit = "d_immense_energy_deposit"
+					has_deposit = "d_immense_society_deposit"
+					has_deposit = "d_immense_physics_deposit"
+					has_deposit = "d_immense_engineering_deposit"
+					has_strategic_resource = yes
+				}
+			}
+		}
+	}
+}
+
+d_zro_deposit = {
+	resources = { 
+		society_research = 2
+		physics_research = 2
+		sr_zro = 1
+	}
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 200
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 20
+			planet = {
+				AND = {
+					is_planet_gasgiants = yes
+
+					is_inside_nebula = yes
+				}
+			}			
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					has_deposit = "d_immense_mineral_deposit"
+					has_deposit = "d_immense_energy_deposit"
+					has_deposit = "d_immense_society_deposit"
+					has_deposit = "d_immense_physics_deposit"
+					has_deposit = "d_immense_engineering_deposit"
+					has_strategic_resource = yes
+				}
+			}
+		}
+	}
+}
+
+####################################################
+# UNION-MOD - Core More Planet Types		   	   #
+# Segment - More Planet Types			   		   #
+# Segment Author - knuckey333's Workshop	   	   #
+# Segment ID	 - 694585917			     	   #
+# Modified and Edited by - H4shX		           #
+# Credit goes to the Original Author		       #
+# Mod Start					   					   #
+####################################################
+
+union_d_zro_deposit = {
+	resources = {
+		society_research = 2
+		physics_research = 2
+		sr_zro = 2
+	}
+	
+	station = shipclass_research_station
+	orbital_weight = {
+		weight = 200
+	}
+
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			planet = {
+				is_planet_class = pc_s_giant_star
+			}
+		}
+		modifier = {
+			weight = 30
+			planet = {
+				AND = {
+					OR = {
+						is_dwarfstar = yes
+					}
+					is_inside_nebula = yes
+				}
+			}			
+		}
+		modifier = {
+			factor = 0
+			solar_system = {
+				OR =  {
+					is_wolfstarssst = yes
+					is_star_class = sc_lbv_blue
+					is_star_class = sc_lbv_green
+					is_star_class = sc_lbv_red
+					is_star_class = sc_nova_1
+					is_star_class = sc_nova_2
+					is_star_class = sc_supernova
+					is_star_class = sc_protostar
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					has_deposit = "d_immense_mineral_deposit"
+					has_deposit = "d_immense_energy_deposit"
+					has_deposit = "d_immense_society_deposit"
+					has_deposit = "d_immense_physics_deposit"
+					has_deposit = "d_immense_engineering_deposit"
+					has_strategic_resource = yes
+				}
+			}
+		}
+	}
+}
+
+d_immense_mineral_energy_deposit = {
+	resources = {
+		energy = 4
+		minerals = 8
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 20
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 4
+			planet = {
+				#OR = {
+					is_planet_class = pc_carbon
+				#}
+			}
+		}
+	}
+}
+
+
+# UNION-MOD - Core Core More Planet Types 	   	   #
+# Mod END					   					   #
+####################################################

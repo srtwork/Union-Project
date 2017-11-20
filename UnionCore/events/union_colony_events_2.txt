@@ -1,0 +1,230 @@
+##############################
+# Colony Events
+# by Maximilian Olbers
+##############################
+
+namespace = colony
+
+@tier1influencecontact = 7
+@tier1influencecontactxenophile = 8
+@tier1influencecontactmin = 20
+@tier1influencecontactmax = 80
+
+@tier2influencecontact = 10
+@tier2influencecontactxenophile = 12
+@tier2influencecontactmin = 40
+@tier2influencecontactmax = 100
+
+@tier1materialreward = 6
+@tier1materialmin = 100
+@tier1materialmax = 500
+@tier2materialreward = 12
+@tier2materialmin = 150
+@tier2materialmax = 1000
+@tier3materialreward = 18
+@tier3materialmin = 250
+@tier3materialmax = 1500
+@tier4materialreward = 24
+@tier4materialmin = 350
+@tier4materialmax = 2000
+@tier5materialreward = 48
+@tier5materialmin = 700
+@tier5materialmax = 4000
+
+@tier1influencereward = 6
+@tier1influencemin = 40
+@tier1influencemax = 100
+@tier2influencereward = 12
+@tier2influencemin = 80
+@tier2influencemax = 175
+@tier3influencereward = 18
+@tier3influencemin = 125
+@tier3influencemax = 250
+@tier4influencereward = 24
+@tier4influencemin = 150
+@tier4influencemax = 300
+@tier5influencereward = 36
+@tier5influencemin = 250
+@tier5influencemax = 500
+@tier6influencereward = 48
+@tier6influencemin = 300
+@tier6influencemax = 600
+
+@tier1unityreward = 6
+@tier1unitymin = 100
+@tier1unitymax = 500
+@tier2unityreward = 12
+@tier2unitymin = 150
+@tier2unitymax = 1000
+@tier3unityreward = 18
+@tier3unitymin = 250
+@tier3unitymax = 1500
+@tier4unityreward = 24
+@tier4unitymin = 350
+@tier4unitymax = 2000
+@tier5unityreward = 48
+@tier5unitymin = 700
+@tier5unitymax = 4000
+
+@tier1researchreward = 6
+@tier1researchmin = 60
+@tier1researchmax = 150
+@tier2researchreward = 12
+@tier2researchmin = 90
+@tier2researchmax = 250
+@tier3researchreward = 18
+@tier3researchmin = 120
+@tier3researchmax = 350
+@tier4researchreward = 24
+@tier4researchmin = 150
+@tier4researchmax = 500
+@tier5researchreward = 48
+@tier5researchmin = 300
+@tier5researchmax = 1000
+
+
+##############################################################################
+# POLLEN APHRODISIAC CHAIN
+##############################################################################
+
+# First event, spawns a non-mandatory special project the player can research
+planet_event = {
+	id = colony.1520
+	title = "colony.1520.name"
+	desc = "colony.1520.desc"
+	picture = GFX_evt_big_landing_ship
+	location = ROOT
+
+	trigger = {
+		has_owner = yes
+		original_owner = yes
+		is_homeworld = no
+		owner = {
+			is_ai = no
+			NOT = { has_country_flag = pheromone_country }
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+		}
+		NOR = {
+			has_global_flag = pheromonefrenzy_global
+			has_global_flag = pheromonefrenzy_done_global
+			has_planet_flag = colony_event
+			has_planet_flag = pheromone_planet
+			is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_habitat
+			is_planet_class = pc_arid
+			is_planet_class = pc_desert
+			is_planet_class = pc_savannah
+			is_planet_savannahs = yes	#Union Project	
+			is_planet_arids = yes		#Union Project	
+			is_planet_deserts = yes		#Union Project	
+		}
+		has_ground_combat = no
+		is_occupied_flag = no
+		num_pops > 0
+		is_capital = no
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = pheromonefrenzy_global
+		set_planet_flag = colony_event
+		set_planet_flag = pheromone_planet
+		owner = { set_country_flag = pheromone_country }
+	}
+
+	option = {
+		name = CURIOUS
+		enable_special_project = {
+			name = "POLLEN_1_PROJECT"
+			location = root
+			owner = root
+		}
+		hidden_effect = { planet_event = { id = colony.1521 days = 360 } }
+	}
+}
+
+# Branch B-2-2, failed to research the special project! The planet is purged of the flower, and indeed all life. The player's colony is destroyed, the planet becomes Toxic for two years, and the player's country gains a negative happiness modifier for ten years.
+planet_event = {
+	id = colony.1532
+	title = "colony.1532.name"
+	desc = "colony.1532.desc"
+	picture = GFX_evt_satellite_in_orbit
+	location = ROOT
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_owner = yes
+		original_owner = yes
+		is_homeworld = no
+		owner = { is_ai = no }
+		has_planet_flag = pheromone_planet
+		has_global_flag = pheromonefrenzy_global
+		has_planet_flag = colony_event
+		has_ground_combat = no
+		num_pops > 0
+		is_capital = no
+	}
+
+	auto_opens = yes
+
+	immediate = {
+		if = {
+			limit = { has_modifier = pheromoned_1 }
+			remove_modifier = pheromoned_1
+		}
+		if = {
+			limit = { has_modifier = pheromoned_2 }
+			remove_modifier = pheromoned_2
+		}
+		if = {
+			limit = { has_modifier = pheromoned_3 }
+			remove_modifier = pheromoned_3
+		}
+		if = {
+			limit = { has_modifier = pheromoned_4 }
+			remove_modifier = pheromoned_4
+		}
+		if = {
+			limit = { has_modifier = depheromoned_1 }
+			remove_modifier = depheromoned_1
+		}
+		set_planet_flag = pheromonefrenzy_reviving
+
+		owner = {
+			add_modifier = {
+				modifier = "pheromoned_grief"
+				days = 3600
+			}
+		}
+	}
+
+	option = {
+		name = colony.1532.a
+		hidden_effect = {
+			owner = {
+				country_event = { id = colony.1533 days = 730 }
+			}
+			random_list = {
+					15 = { change_pc = pc_NH3toxic } #Union Project	
+					15 = { change_pc = pc_N2toxic } #Union Project	
+					15 = { change_pc = pc_SO2toxic } #Union Project	
+					15 = { change_pc = pc_CH4toxic } #Union Project	
+					15 = { change_pc = pc_CO2N2toxic } #Union Project	
+					15 = { change_pc = pc_CO2toxic } #Union Project	
+					15 = { change_pc = pc_toxic } 
+				}
+			destroy_colony = { keep_buildings = no }
+		}
+
+		tooltip = {
+			owner = {
+				add_modifier = {
+					modifier = "pheromoned_grief"
+					days = 3600
+				}
+			}
+		}
+	}
+}

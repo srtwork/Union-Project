@@ -1,0 +1,13 @@
+
+namespace = real_space
+
+### sets global flag “has_real_space_mod”
+event = {
+	id = real_space.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = "has_real_space_mod"
+	}
+}

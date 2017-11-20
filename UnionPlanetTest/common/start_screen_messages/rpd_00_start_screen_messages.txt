@@ -1,0 +1,283 @@
+# Start Screen Messages
+# Parameters:
+#   trigger, a trigger with country which decides if this is a valid part. Empty will be treated as always=yes.
+#   localization, a key to a localized string.
+#	location, decides where this chunk of text is located in the description, cannot be negative.
+
+### FIRST PARTS
+ 
+# Antarctic
+part = {
+	location = 0
+	localization = "START_SCREEN_PART_ONE_ANTARCTIC"
+	
+	trigger = {
+		OR = {
+			ideal_planet_class = pc_CO2antarctic
+			ideal_planet_class = pc_N2antarctic
+			ideal_planet_class = pc_CH4antarctic
+			ideal_planet_class = pc_SO2antarctic
+			ideal_planet_class = pc_NH3antarctic
+			ideal_planet_class = pc_CO2N2antarctic	
+			ideal_planet_class = pc_antarctic		
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}		
+}
+# Cloud Forest
+part = {
+	location = 0
+	localization = "START_SCREEN_PART_ONE_HAJUNGLE"
+	
+	trigger = {
+		OR = {
+			ideal_planet_class = pc_CO2hajungle
+			ideal_planet_class = pc_N2hajungle
+			ideal_planet_class = pc_CH4hajungle
+			ideal_planet_class = pc_SO2hajungle
+			ideal_planet_class = pc_NH3hajungle
+			ideal_planet_class = pc_hajungle
+			ideal_planet_class = pc_CO2N2hajungle
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}		
+}
+# Ice Floe
+part = {
+	location = 0
+	localization = "START_SCREEN_PART_ONE_SUBARCTIC"
+	
+	trigger = {
+		OR = {
+			ideal_planet_class = pc_CO2subarctic
+			ideal_planet_class = pc_N2subarctic
+			ideal_planet_class = pc_CH4subarctic
+			ideal_planet_class = pc_SO2subarctic
+			ideal_planet_class = pc_NH3subarctic
+			ideal_planet_class = pc_subarctic
+			ideal_planet_class = pc_CO2N2subarctic	
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}		
+}
+# Glacial
+part = {
+	location = 0
+	localization = "START_SCREEN_PART_ONE_GLACIAL"
+	
+	trigger = {
+		OR = {
+			ideal_planet_class = pc_CO2glacial
+			ideal_planet_class = pc_N2glacial
+			ideal_planet_class = pc_CH4glacial
+			ideal_planet_class = pc_SO2glacial
+			ideal_planet_class = pc_NH3glacial
+			ideal_planet_class = pc_glacial
+			ideal_planet_class = pc_CO2N2glacial		
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}		
+}
+# Mangrove
+part = {
+	location = 0
+	localization = "START_SCREEN_PART_ONE_MANGROVE"
+	
+	trigger = {
+		OR = {
+			ideal_planet_class = pc_CO2mangrove
+			ideal_planet_class = pc_N2mangrove
+			ideal_planet_class = pc_CH4mangrove
+			ideal_planet_class = pc_SO2mangrove
+			ideal_planet_class = pc_NH3mangrove
+			ideal_planet_class = pc_mangrove
+			ideal_planet_class = pc_CO2N2mangrove		
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}		
+}
+# Dune
+part = {
+	location = 0
+	localization = "START_SCREEN_PART_ONE_SANDSEA"
+	
+	trigger = {
+		OR = {
+			ideal_planet_class = pc_CO2sandsea_planet
+			ideal_planet_class = pc_N2sandsea_planet
+			ideal_planet_class = pc_CH4sandsea_planet
+			ideal_planet_class = pc_SO2sandsea_planet
+			ideal_planet_class = pc_NH3sandsea_planet
+			ideal_planet_class = pc_sandsea_planet
+			ideal_planet_class = pc_CO2N2sandsea_planet
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}		
+}
+
+# Atoll
+part = {
+	location = 0
+	localization = "START_SCREEN_PART_ONE_DESERTISLANDS"
+	
+	trigger = {
+		OR = {
+			ideal_planet_class = pc_CO2desertislands
+			ideal_planet_class = pc_N2desertislands
+			ideal_planet_class = pc_CH4desertislands
+			ideal_planet_class = pc_SO2desertislands
+			ideal_planet_class = pc_NH3desertislands
+			ideal_planet_class = pc_CO2N2desertislands
+			ideal_planet_class = pc_desertislands		
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}		
+}
+# Steppe
+part = {
+	location = 0
+	localization = "START_SCREEN_PART_ONE_STEPPE"
+	
+	trigger = {
+		OR = {
+			ideal_planet_class = pc_CO2steppe
+			ideal_planet_class = pc_N2steppe
+			ideal_planet_class = pc_CH4steppe
+			ideal_planet_class = pc_SO2steppe
+			ideal_planet_class = pc_NH3steppe
+			ideal_planet_class = pc_steppe
+			ideal_planet_class = pc_CO2N2steppe		
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}		
+}
+# Desolate
+part = {
+	location = 0
+	localization = "START_SCREEN_PART_ONE_FROZENDESERT"
+	
+	trigger = {
+		OR = {
+			ideal_planet_class = pc_CO2frozen_desert
+			ideal_planet_class = pc_N2frozen_desert
+			ideal_planet_class = pc_CH4frozen_desert
+			ideal_planet_class = pc_SO2frozen_desert
+			ideal_planet_class = pc_NH3frozen_desert
+			ideal_planet_class = pc_frozen_desert
+			ideal_planet_class = pc_CO2N2frozen_desert
+		}
+
+		NOT = { has_country_flag = custom_start_screen }
+	}		
+}
+# Arroyo
+part = {
+	location = 0
+	localization = "START_SCREEN_PART_ONE_MESA"
+	
+	trigger = {
+		OR = {
+			ideal_planet_class = pc_CO2mesa
+			ideal_planet_class = pc_N2mesa
+			ideal_planet_class = pc_CH4mesa
+			ideal_planet_class = pc_SO2mesa
+			ideal_planet_class = pc_NH3mesa
+			ideal_planet_class = pc_mesa
+			ideal_planet_class = pc_CO2N2mesa		
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}		
+}
+# Oasis
+part = {
+	location = 0
+	localization = "START_SCREEN_PART_ONE_OASIS"
+	
+	trigger = {
+		OR = {
+			ideal_planet_class = pc_CO2oasis
+			ideal_planet_class = pc_N2oasis
+			ideal_planet_class = pc_CH4oasis
+			ideal_planet_class = pc_CO2N2oasis
+			ideal_planet_class = pc_SO2oasis
+			ideal_planet_class = pc_NH3oasis
+			ideal_planet_class = pc_oasis		
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}		
+}
+# Interglacial
+part = {
+	location = 0
+	localization = "START_SCREEN_PART_ONE_GEOTHERMAL"
+	
+	trigger = {
+		OR = {
+			ideal_planet_class = pc_CO2geothermal
+			ideal_planet_class = pc_N2geothermal
+			ideal_planet_class = pc_CH4geothermal
+			ideal_planet_class = pc_SO2geothermal
+			ideal_planet_class = pc_NH3geothermal
+			ideal_planet_class = pc_geothermal
+			ideal_planet_class = pc_CO2N2geothermal		
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}		
+}
+# Cascadian
+part = {
+	location = 0
+	localization = "START_SCREEN_PART_ONE_CASCADIAN"
+	
+	trigger = {
+		OR = {
+			ideal_planet_class = pc_CO2cascadian
+			ideal_planet_class = pc_N2cascadian
+			ideal_planet_class = pc_CH4cascadian
+			ideal_planet_class = pc_SO2cascadian
+			ideal_planet_class = pc_NH3cascadian
+			ideal_planet_class = pc_cascadian
+			ideal_planet_class = pc_CO2N2cascadian
+		}
+
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+# Swamp
+part = {
+	location = 0
+	localization = "START_SCREEN_PART_ONE_SWAMP"
+	
+	trigger = {
+		OR = {
+			ideal_planet_class = pc_CO2swamp
+			ideal_planet_class = pc_N2swamp
+			ideal_planet_class = pc_CH4swamp
+			ideal_planet_class = pc_SO2swamp
+			ideal_planet_class = pc_NH3swamp
+			ideal_planet_class = pc_swamp
+			ideal_planet_class = pc_CO2N2swamp
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+# Badlands
+part = {
+	location = 0
+	localization = "START_SCREEN_PART_ONE_HADESERT"
+	
+	trigger = {
+		OR = {
+			ideal_planet_class = pc_CO2hadesert
+			ideal_planet_class = pc_N2hadesert
+			ideal_planet_class = pc_CH4hadesert
+			ideal_planet_class = pc_SO2hadesert
+			ideal_planet_class = pc_NH3hadesert
+			ideal_planet_class = pc_CO2N2hadesert
+			ideal_planet_class = pc_hadesert		
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}

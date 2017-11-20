@@ -1,0 +1,45 @@
+# See traditions/README.txt for format
+
+ap_mastery_of_nature = {
+	on_enabled = {
+		custom_tooltip = "ap_mastery_of_nature_unlocks"
+		hidden_effect = {
+			give_technology = { message = no tech = tech_tb_mountain_range }
+			give_technology = { message = no tech = tech_tb_volcano }
+			give_technology = { message = no tech = tech_tb_dangerous_wildlife }
+			give_technology = { message = no tech = tech_tb_dense_jungle }
+			give_technology = { message = no tech = tech_tb_quicksand_basin }
+			give_technology = { message = no tech = tech_tb_noxious_swamp }
+			give_technology = { message = no tech = tech_tb_massive_glacier }
+			give_technology = { message = no tech = tech_tb_toxic_kelp }
+			give_technology = { message = no tech = tech_tb_deep_sinkhole }
+			give_technology = { message = no tech = tech_c_tb_Arachnophobia }
+			give_technology = { message = no tech = tech_c_tb_Dunes }
+			give_technology = { message = no tech = tech_c_tb_Seasonal_Flooding }
+			give_technology = { message = no tech = tech_c_tb_Locust_Plagues }
+			give_technology = { message = no tech = tech_c_tb_Toxic_Gas }
+		}
+	}
+	modifier = {
+		planet_clear_blocker_cost_mult = -0.5
+	}
+	
+	potential = {
+		NOT = {
+			has_ascension_perk = ap_mastery_of_nature
+		}
+	}
+	
+	ai_weight = {
+		factor = 10
+		modifier = {
+			factor = 0.5
+			num_ascension_perks > 0
+		}
+		modifier = {
+			factor = 0.1
+			num_ascension_perks > 1
+		}		
+	}
+}
+

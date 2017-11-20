@@ -1,0 +1,245 @@
+@boxy = 2.5
+
+#	entity = {
+#		name = "enclave_station_entity"
+#		
+#		default_state = "idle"
+#		state = { name = "idle"	state_time = 5 }
+#		state = { name = "death" state_time = 3 looping = no 
+#			event = { time = 2.9 particle = "large_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_large" } }
+#		}
+#		scale = 3
+#	}
+
+entity = {
+	name = "azure_dust_cloud_entity_small"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "azure_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 3
+}
+entity = {
+	name = "azure_dust_cloud_entity_medium"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "azure_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 5
+}
+entity = {
+	name = "azure_dust_cloud_entity_large"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "azure_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 10
+}
+
+entity = {
+	name = "red_dust_cloud_entity_small"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "red_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 3
+}
+entity = {
+	name = "red_dust_cloud_entity_medium"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "red_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 5
+}
+entity = {
+	name = "red_dust_cloud_entity_large"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "red_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 10
+}
+
+entity = {
+	name = "green_dust_cloud_entity_small"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "green_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 3
+}
+entity = {
+	name = "green_dust_cloud_entity_medium"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "green_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 5
+}
+entity = {
+	name = "green_dust_cloud_entity_large"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "green_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 10
+}
+
+entity = {
+	name = "purple_dust_cloud_entity_small"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "purple_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 3
+}
+entity = {
+	name = "purple_dust_cloud_entity_medium"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "purple_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 5
+}
+entity = {
+	name = "purple_dust_cloud_entity_large"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "purple_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 10
+}
+
+entity = {
+	name = "orange_dust_cloud_entity_small"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "orange_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 3
+}
+entity = {
+	name = "orange_dust_cloud_entity_medium"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "orange_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 5
+}
+entity = {
+	name = "orange_dust_cloud_entity_large"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "orange_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 10
+}
+
+entity = {
+	name = "blue_dust_cloud_entity_small"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "blue_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 3
+}
+entity = {
+	name = "blue_dust_cloud_entity_medium"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "blue_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 5
+}
+entity = {
+	name = "blue_dust_cloud_entity_large"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "blue_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 10
+}
+
+entity = {
+	name = "black_dust_cloud_entity_small"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "black_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 3
+}
+entity = {
+	name = "black_dust_cloud_entity_medium"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "black_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 5
+}
+entity = {
+	name = "black_dust_cloud_entity_large"
+	
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { time = 0 particle = "black_dust_cloud_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 10
+}
+
+
+entity = {
+	name = "debris_large_01_entity"
+	pdxmesh = "debris_large_01_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" 
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_wrecked_shipyard_idle" } }
+		event = { time = 0 particle = "debris_large_dust_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 3
+}
+
+entity = {
+	name = "debris_medium_01_entity"
+	pdxmesh = "debris_medium_01_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" 
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_wrecked_shipyard_idle" } }
+		event = { time = 0 node = "dust_locator" particle = "debris_medium_dust_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 3
+}
+
+entity = {
+	name = "debris_medium_02_entity"
+	pdxmesh = "debris_medium_02_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" 
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_wrecked_shipyard_idle" } }
+		event = { time = 0 node = "dust_locator" particle = "debris_medium_dust_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 3
+}

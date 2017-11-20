@@ -1,0 +1,485 @@
+@base_moon_distance = 10
+
+### FALLEN EMPIRE HOME SYSTEMS
+
+# Star of Sirrah
+
+hypo_stars_fallen_Y = {
+	class = sc_a
+	name = "Star of Sirrah"
+	
+	usage = fallen_empire_init
+	usage_odds = 0.05
+	max_instances = 1
+	
+	planet = {
+		name = "Sirrah"
+		class = "pc_barycenter"
+		orbit_distance = 0
+		orbit_angle = 1
+	#	size = 40
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Sirrah A"
+		class = "pc_a_star"
+		orbit_distance = 33
+		orbit_angle = 0
+		size = 60
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Sirrah B"
+		class = "pc_f_star"
+		entity = "f_star_class_star_entity"
+		orbit_distance = 67
+		orbit_angle = 180
+		size = 36
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Sirrah b"
+		class = "pc_molten"
+		orbit_distance = 47
+		orbit_angle = 60
+		size = 6
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Sirrah c"
+		class = "pc_barren"
+		orbit_distance = 30
+		orbit_angle = 170
+		size = 18
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Planet Y"
+		class = "pc_ocean"
+		orbit_distance = 39
+		orbit_angle = 78
+		size = 20
+		has_ring = no
+		tile_blockers = none
+		modifiers = none
+		
+		init_effect = {
+
+			create_cluster = {
+				id = fe1_cluster
+				radius = 80
+				center = this.solar_system
+			}
+
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = ROOT
+			set_capital = yes
+			random_tile = {
+				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_3"
+				set_deposit = d_energy_deposit	
+				create_pop = { 
+					species = owner_main_species
+				}				
+			}
+			
+			while = {
+				count = 4
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_agri_processing_complex"
+					set_deposit = d_farmland_deposit		
+					create_pop = { 
+						species = owner_main_species
+					}
+				}				
+			}			
+			while = {
+				count = 10
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_dark_matter_power_plant"
+					set_deposit = d_energy_deposit	
+					create_pop = { 
+						species = owner_main_species
+					}
+				}				
+			}
+			while = {
+				count = 10
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_ancient_factory"
+					set_deposit = d_mineral_deposit
+					create_pop = { 
+						species = owner_main_species
+					}				
+				}				
+			}			
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "gene_warrior_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "gene_warrior_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "gene_warrior_army"
+			}			
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "gene_warrior_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "gene_warrior_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "gene_warrior_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}		
+			create_spaceport = {
+				owner = ROOT
+				initial_module = "fallen_empire_weapon"				
+			}	
+			spaceport = {
+				set_spaceport_level = 6		
+				set_spaceport_module = {
+					slot = 1
+					module = "crew_quarters"
+				}	
+				set_spaceport_module = {
+					slot = 2
+					module = "fleet_academy"
+				}
+				set_spaceport_module = {
+					slot = 3
+					module = "synchronized_defenses"
+				}
+				set_spaceport_module = {
+					slot = 4
+					module = "engineering_bay"
+				}
+			}					
+			create_fallen_empire_starting_navy = yes
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_fallen_empire_large_station = yes
+					set_location = {
+						target = PREV
+						distance = 20
+						angle = 90
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_fallen_empire_large_station = yes
+					set_location = {
+						target = PREV
+						distance = 20
+						angle = 180
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_fallen_empire_large_station = yes
+					set_location = {
+						target = PREV
+						distance = 20
+						angle = 270
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_fallen_empire_large_station = yes
+					set_location = {
+						target = PREV
+						distance = 20
+						angle = 0
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "NAME_Theta"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 80
+					}				
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "NAME_Theta"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 90
+					}				
+				}
+			}				
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "NAME_Theta"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 100
+					}				
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = Starblade
+						design = "NAME_Alpha"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 10
+						angle = random 
+					}					
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "NAME_Beta"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Beta"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Beta"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Beta"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Beta"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Beta"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Beta"
+						graphical_culture = root
+					}				
+					create_ship = {
+						name = random
+						design = "NAME_Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Gamma"
+						graphical_culture = root
+					}					
+					create_ship = {
+						name = random
+						design = "NAME_Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Gamma"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 90
+						angle = random 
+					}
+				}
+			}
+		}
+	}
+	
+	planet = {
+		name = "Sirrah e"
+		class = "rl_gasgiantsall"
+		orbit_distance = 30
+		orbit_angle = 40
+		size = 39
+		has_ring = yes
+		entity = "gas_giant_03_entity"
+		change_orbit = 7
+	}
+	
+	planet = {
+		name = "Sirrah f"
+		class = "rl_gasgiantsall"
+		orbit_distance = 50
+		orbit_angle = 125
+		size = 25
+		has_ring = yes
+		entity = "gas_giant_04_entity"
+		change_orbit = 4
+		
+		moon = {
+			name = "Sirrah f1"
+			class = "rl_frozen"
+			size = 5
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			has_ring = no
+		}
+	}
+
+}

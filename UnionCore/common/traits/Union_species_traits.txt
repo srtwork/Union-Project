@@ -1,0 +1,271 @@
+@atmosphtemporaris = 0.30
+
+trait_nh3atmos = {
+	icon = "gfx/interface/icons/traits/trait_pc_NH3_preference.dds"
+	cost = 1
+	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL }
+	modifier = {
+		pc_NH3alpine_habitability = @atmosphtemporaris
+		pc_NH3arctic_habitability = @atmosphtemporaris
+		pc_NH3arid_habitability =  @atmosphtemporaris
+		pc_NH3desert_habitability = @atmosphtemporaris
+		pc_NH3ocean_habitability = @atmosphtemporaris
+		pc_NH3savannah_habitability = @atmosphtemporaris
+		pc_NH3temperate_habitability = @atmosphtemporaris
+		pc_NH3tropical_habitability = @atmosphtemporaris
+		pc_NH3tundra_habitability = @atmosphtemporaris	
+
+		pc_NH3greenhouse_cold_habitability = @atmosphtemporaris
+		pc_NH3greenhouse_hot_habitability = @atmosphtemporaris
+		
+		pc_NH3antarctic_habitability = @atmosphtemporaris
+		pc_NH3cascadian_habitability = @atmosphtemporaris
+		pc_NH3desertislands_habitability = @atmosphtemporaris
+		pc_NH3frozen_desert_habitability = @atmosphtemporaris
+		pc_NH3geothermal_habitability = @atmosphtemporaris
+		pc_NH3glacial_habitability = @atmosphtemporaris
+		pc_NH3hadesert_habitability = @atmosphtemporaris
+		pc_NH3hajungle_habitability = @atmosphtemporaris
+		pc_NH3mangrove_habitability = @atmosphtemporaris
+		pc_NH3mesa_habitability = @atmosphtemporaris	
+		pc_NH3oasis_habitability = @atmosphtemporaris
+		pc_NH3sandsea_planet_habitability = @atmosphtemporaris
+		pc_NH3steppe_habitability = @atmosphtemporaris
+		pc_NH3subarctic_habitability = @atmosphtemporaris
+		pc_NH3swamp_habitability = @atmosphtemporaris
+	}
+}
+
+
+trait_co2n2atmos = {
+	icon = "gfx/interface/icons/traits/trait_pc_CO2N2_preference.dds"
+	cost = 1
+	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL }
+	modifier = {
+		pc_CO2N2alpine_habitability = @atmosphtemporaris
+		pc_CO2N2arctic_habitability = @atmosphtemporaris
+		pc_CO2N2arid_habitability =  @atmosphtemporaris
+		pc_CO2N2desert_habitability = @atmosphtemporaris
+		pc_CO2N2ocean_habitability = @atmosphtemporaris
+		pc_CO2N2savannah_habitability = @atmosphtemporaris
+		pc_CO2N2temperate_habitability = @atmosphtemporaris
+		pc_CO2N2tropical_habitability = @atmosphtemporaris
+		pc_CO2N2tundra_habitability = @atmosphtemporaris	
+
+		pc_CO2N2greenhouse_cold_habitability = @atmosphtemporaris
+		pc_CO2N2greenhouse_hot_habitability = @atmosphtemporaris
+		
+		pc_CO2N2antarctic_habitability = @atmosphtemporaris
+		pc_CO2N2cascadian_habitability = @atmosphtemporaris
+		pc_CO2N2desertislands_habitability = @atmosphtemporaris
+		pc_CO2N2frozen_desert_habitability = @atmosphtemporaris
+		pc_CO2N2geothermal_habitability = @atmosphtemporaris
+		pc_CO2N2glacial_habitability = @atmosphtemporaris
+		pc_CO2N2hadesert_habitability = @atmosphtemporaris
+		pc_CO2N2hajungle_habitability = @atmosphtemporaris
+		pc_CO2N2mangrove_habitability = @atmosphtemporaris
+		pc_CO2N2mesa_habitability = @atmosphtemporaris	
+		pc_CO2N2oasis_habitability = @atmosphtemporaris
+		pc_CO2N2sandsea_planet_habitability = @atmosphtemporaris
+		pc_CO2N2steppe_habitability = @atmosphtemporaris
+		pc_CO2N2subarctic_habitability = @atmosphtemporaris
+		pc_CO2N2swamp_habitability = @atmosphtemporaris
+	}
+}
+
+trait_co2atmos = {
+	icon = "gfx/interface/icons/traits/trait_pc_CO2_preference.dds"
+	cost = 1
+	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL }
+	modifier = {
+		pc_CO2alpine_habitability = @atmosphtemporaris
+		pc_CO2arctic_habitability = @atmosphtemporaris
+		pc_CO2arid_habitability =  @atmosphtemporaris
+		pc_CO2desert_habitability = @atmosphtemporaris
+		pc_CO2ocean_habitability = @atmosphtemporaris
+		pc_CO2savannah_habitability = @atmosphtemporaris
+		pc_CO2temperate_habitability = @atmosphtemporaris
+		pc_CO2tropical_habitability = @atmosphtemporaris
+		pc_CO2tundra_habitability = @atmosphtemporaris	
+
+		pc_CO2greenhouse_cold_habitability = @atmosphtemporaris
+		pc_CO2greenhouse_hot_habitability = @atmosphtemporaris
+		
+		pc_CO2antarctic_habitability = @atmosphtemporaris
+		pc_CO2cascadian_habitability = @atmosphtemporaris
+		pc_CO2desertislands_habitability = @atmosphtemporaris
+		pc_CO2frozen_desert_habitability = @atmosphtemporaris
+		pc_CO2geothermal_habitability = @atmosphtemporaris
+		pc_CO2glacial_habitability = @atmosphtemporaris
+		pc_CO2hadesert_habitability = @atmosphtemporaris
+		pc_CO2hajungle_habitability = @atmosphtemporaris
+		pc_CO2mangrove_habitability = @atmosphtemporaris
+		pc_CO2mesa_habitability = @atmosphtemporaris	
+		pc_CO2oasis_habitability = @atmosphtemporaris
+		pc_CO2sandsea_planet_habitability = @atmosphtemporaris
+		pc_CO2steppe_habitability = @atmosphtemporaris
+		pc_CO2subarctic_habitability = @atmosphtemporaris
+		pc_CO2swamp_habitability = @atmosphtemporaris
+	}
+}
+
+trait_ch4atmos = {
+	icon = "gfx/interface/icons/traits/trait_pc_CH4_preference.dds"
+	cost = 1
+	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL }
+	modifier = {
+		pc_CH4alpine_habitability = @atmosphtemporaris
+		pc_CH4arctic_habitability = @atmosphtemporaris
+		pc_CH4arid_habitability =  @atmosphtemporaris
+		pc_CH4desert_habitability = @atmosphtemporaris
+		pc_CH4ocean_habitability = @atmosphtemporaris
+		pc_CH4savannah_habitability = @atmosphtemporaris
+		pc_CH4temperate_habitability = @atmosphtemporaris
+		pc_CH4tropical_habitability = @atmosphtemporaris
+		pc_CH4tundra_habitability = @atmosphtemporaris	
+
+		pc_CH4greenhouse_cold_habitability = @atmosphtemporaris
+		pc_CH4greenhouse_hot_habitability = @atmosphtemporaris
+		
+		pc_CH4antarctic_habitability = @atmosphtemporaris
+		pc_CH4cascadian_habitability = @atmosphtemporaris
+		pc_CH4desertislands_habitability = @atmosphtemporaris
+		pc_CH4frozen_desert_habitability = @atmosphtemporaris
+		pc_CH4geothermal_habitability = @atmosphtemporaris
+		pc_CH4glacial_habitability = @atmosphtemporaris
+		pc_CH4hadesert_habitability = @atmosphtemporaris
+		pc_CH4hajungle_habitability = @atmosphtemporaris
+		pc_CH4mangrove_habitability = @atmosphtemporaris
+		pc_CH4mesa_habitability = @atmosphtemporaris	
+		pc_CH4oasis_habitability = @atmosphtemporaris
+		pc_CH4sandsea_planet_habitability = @atmosphtemporaris
+		pc_CH4steppe_habitability = @atmosphtemporaris
+		pc_CH4subarctic_habitability = @atmosphtemporaris
+		pc_CH4swamp_habitability = @atmosphtemporaris
+	}
+}
+
+trait_n2atmos = {
+	icon = "gfx/interface/icons/traits/trait_pc_N2_preference.dds"
+	cost = 1
+	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL }
+	modifier = {
+		pc_N2alpine_habitability = @atmosphtemporaris
+		pc_N2arctic_habitability = @atmosphtemporaris
+		pc_N2arid_habitability =  @atmosphtemporaris
+		pc_N2desert_habitability = @atmosphtemporaris
+		pc_N2ocean_habitability = @atmosphtemporaris
+		pc_N2savannah_habitability = @atmosphtemporaris
+		pc_N2temperate_habitability = @atmosphtemporaris
+		pc_N2tropical_habitability = @atmosphtemporaris
+		pc_N2tundra_habitability = @atmosphtemporaris	
+
+		pc_N2greenhouse_cold_habitability = @atmosphtemporaris
+		pc_N2greenhouse_hot_habitability = @atmosphtemporaris
+		
+		pc_N2antarctic_habitability = @atmosphtemporaris
+		pc_N2cascadian_habitability = @atmosphtemporaris
+		pc_N2desertislands_habitability = @atmosphtemporaris
+		pc_N2frozen_desert_habitability = @atmosphtemporaris
+		pc_N2geothermal_habitability = @atmosphtemporaris
+		pc_N2glacial_habitability = @atmosphtemporaris
+		pc_N2hadesert_habitability = @atmosphtemporaris
+		pc_N2hajungle_habitability = @atmosphtemporaris
+		pc_N2mangrove_habitability = @atmosphtemporaris
+		pc_N2mesa_habitability = @atmosphtemporaris	
+		pc_N2oasis_habitability = @atmosphtemporaris
+		pc_N2sandsea_planet_habitability = @atmosphtemporaris
+		pc_N2steppe_habitability = @atmosphtemporaris
+		pc_N2subarctic_habitability = @atmosphtemporaris
+		pc_N2swamp_habitability = @atmosphtemporaris
+	}
+}
+
+trait_so2atmos = {
+	icon = "gfx/interface/icons/traits/trait_pc_SO2_preference.dds"
+	cost = 1
+	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL }
+	modifier = {
+		pc_SO2alpine_habitability = @atmosphtemporaris
+		pc_SO2arctic_habitability = @atmosphtemporaris
+		pc_SO2arid_habitability =  @atmosphtemporaris
+		pc_SO2desert_habitability = @atmosphtemporaris
+		pc_SO2ocean_habitability = @atmosphtemporaris
+		pc_SO2savannah_habitability = @atmosphtemporaris
+		pc_SO2temperate_habitability = @atmosphtemporaris
+		pc_SO2tropical_habitability = @atmosphtemporaris
+		pc_SO2tundra_habitability = @atmosphtemporaris	
+
+		pc_SO2greenhouse_cold_habitability = @atmosphtemporaris
+		pc_SO2greenhouse_hot_habitability = @atmosphtemporaris
+		
+		pc_SO2antarctic_habitability = @atmosphtemporaris
+		pc_SO2cascadian_habitability = @atmosphtemporaris
+		pc_SO2desertislands_habitability = @atmosphtemporaris
+		pc_SO2frozen_desert_habitability = @atmosphtemporaris
+		pc_SO2geothermal_habitability = @atmosphtemporaris
+		pc_SO2glacial_habitability = @atmosphtemporaris
+		pc_SO2hadesert_habitability = @atmosphtemporaris
+		pc_SO2hajungle_habitability = @atmosphtemporaris
+		pc_SO2mangrove_habitability = @atmosphtemporaris
+		pc_SO2mesa_habitability = @atmosphtemporaris	
+		pc_SO2oasis_habitability = @atmosphtemporaris
+		pc_SO2sandsea_planet_habitability = @atmosphtemporaris
+		pc_SO2steppe_habitability = @atmosphtemporaris
+		pc_SO2subarctic_habitability = @atmosphtemporaris
+		pc_SO2swamp_habitability = @atmosphtemporaris
+	}
+}
+
+trait_oxy2atmos = {
+	icon = "gfx/interface/icons/traits/trait_pc_desert_preference.dds"
+	cost = 1
+	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL }
+	modifier = {
+		pc_alpine_habitability = @atmosphtemporaris
+		pc_arctic_habitability = @atmosphtemporaris
+		pc_arid_habitability =  @atmosphtemporaris
+		pc_desert_habitability = @atmosphtemporaris
+		pc_ocean_habitability = @atmosphtemporaris
+		pc_savannah_habitability = @atmosphtemporaris
+		pc_continental_habitability = @atmosphtemporaris
+		pc_tropical_habitability = @atmosphtemporaris
+		pc_tundra_habitability = @atmosphtemporaris	
+
+		pc_greenhouse_cold_habitability = @atmosphtemporaris
+		pc_greenhouse_hot_habitability = @atmosphtemporaris
+		
+		pc_antarctic_habitability = @atmosphtemporaris
+		pc_cascadian_habitability = @atmosphtemporaris
+		pc_desertislands_habitability = @atmosphtemporaris
+		pc_frozen_desert_habitability = @atmosphtemporaris
+		pc_geothermal_habitability = @atmosphtemporaris
+		pc_glacial_habitability = @atmosphtemporaris
+		pc_hadesert_habitability = @atmosphtemporaris
+		pc_hajungle_habitability = @atmosphtemporaris
+		pc_mangrove_habitability = @atmosphtemporaris
+		pc_mesa_habitability = @atmosphtemporaris	
+		pc_oasis_habitability = @atmosphtemporaris
+		pc_sandsea_planet_habitability = @atmosphtemporaris
+		pc_steppe_habitability = @atmosphtemporaris
+		pc_subarctic_habitability = @atmosphtemporaris
+		pc_swamp_habitability = @atmosphtemporaris
+		
+		pc_arctpel_habitability = @atmosphtemporaris
+		pc_troppel_habitability = @atmosphtemporaris
+	}
+}

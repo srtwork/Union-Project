@@ -1,0 +1,26 @@
+###### STAR ANOMALY
+
+anomaly = {
+	event = hypostars.1
+	category = "antimatter_star_anom"
+	
+	weight = 1 
+	
+	potential = {
+		always = yes
+	}
+}
+
+###### PLANET ANOMALY
+
+
+anomaly = {
+	event = hypostars.2
+	category = "antimatter_star_planet"
+	
+	weight = 1 
+	
+	potential = {
+		always = yes
+	}
+}

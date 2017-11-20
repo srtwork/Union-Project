@@ -1,0 +1,562 @@
+##########################
+# MORE STAR CLASSES EVENTS
+# BY KEPLER68
+##########################
+
+#SPOILERS GO AWAY
+
+namespace = morestars
+
+ship_event = {
+	id = morestars.1
+	title = morestars.1.name
+	desc = morestars.1.desc
+	picture = GFX_evt_wormhole
+	location = FROM
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		owner = {
+				is_ai = no
+			}
+		FROM = {
+			has_star_flag = primordial_system
+		}
+	}
+	immediate = {
+			set_country_flag = found_primordial #for later use if i want to :D
+		}
+	option = {
+		name = morestars.1a
+	}
+}
+
+ship_event = {
+	id = morestars.2
+	title = morestars.2.name
+	desc = morestars.2.desc
+	picture = GFX_evt_wormhole
+	location = FROM
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		owner = {
+				is_ai = no
+			}
+		FROM = {
+			has_star_flag = green_system
+		}
+	}
+	immediate = {
+			set_country_flag = found_green_star #for later use if i want to :)
+		}
+	option = {
+		name = morestars.2a
+	}
+}
+
+
+ship_event = {
+	id = morestars.3
+	title = morestars.3.name
+	desc = morestars.3.desc
+	picture = GFX_evt_wormhole
+	location = FROM
+	is_triggered_only = yes
+	option = {
+		name = morestars.3a
+	}
+}
+#Genius event made by mzilli. go give him love :)
+event = {
+	id = morestars.4
+	title = OK
+	desc = OK
+	hide_window = yes
+	#is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		every_planet = {
+			limit = {
+				has_planet_flag = morestars_binary_a
+			}
+			set_name = "[This.GetName] A"
+		}
+		every_planet = {
+			limit = {
+				has_planet_flag = morestars_binary_b
+			}
+			set_name = "[This.GetName] B"
+		}
+		every_planet = {
+			limit = {
+				has_planet_flag = morestars_binary_c
+			}
+			set_name = "[This.GetName] C"
+		}
+		every_planet = {
+			limit = {
+				has_planet_flag = morestars_binary_d
+			}
+			set_name = "[This.GetName] D"
+		}
+		every_planet = {
+			limit = {
+				has_planet_flag = morestars_binary_e
+			}
+			set_name = "[This.GetName] E"
+		}
+		every_planet = {
+			limit = {
+				has_planet_flag = morestars_binary_f
+			}
+			set_name = "[This.GetName] F"
+		}
+		every_planet = {
+			limit = {
+				has_planet_flag = morestars_binary_g
+			}
+			set_name = "[This.GetName] G"
+		}
+	}
+}
+
+country_event = {
+	id = morestars.5
+	title = morestars.5.name
+	desc = morestars.5.desc
+	fire_only_once = yes
+	picture = GFX_evt_wormhole
+	trigger = {
+		not = { has_global_flag = asked_rouge }
+		is_ai = no
+	}
+	option = {#10
+		name = morestars.5a
+		set_global_flag = asked_rouge
+		set_global_flag = generate_rouge_planets
+		set_global_flag = generated_rouge_40
+	}
+	option = {#20
+		name = morestars.5b
+		set_global_flag = asked_rouge
+		set_global_flag = generate_rouge_planets
+		set_global_flag = generated_rouge_30
+	}
+	option = {#30
+		name = morestars.5c
+		set_global_flag = asked_rouge
+		set_global_flag = generate_rouge_planets
+		set_global_flag = generated_rouge_20
+	}
+	option = {#40
+		name = morestars.5d
+		set_global_flag = asked_rouge
+		set_global_flag = generate_rouge_planets
+		set_global_flag = generated_rouge_10
+	}
+	option = {#50
+		name = morestars.5e
+		set_global_flag = asked_rouge
+		set_global_flag = generate_rouge_planets
+	}
+	option = {#AW HELLZ NAH
+		name = morestars.5f
+		set_global_flag = asked_rouge #does not set generate rogue planets so morestars.6 isnt fired
+		set_global_flag = generated_rouge_50 #safeguard
+	}
+}
+country_event = {
+	id = morestars.6
+	hide_window = yes
+	trigger = {
+		NOT = { has_global_flag = generated_rouge_50 }
+		has_global_flag = generate_rouge_planets
+	}
+	immediate = {
+	if = {
+		limit = { has_global_flag = generated_rouge_49 }
+		remove_global_flag = generated_rouge_49
+		set_global_flag = generated_rouge_50
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_48 }
+		remove_global_flag = generated_rouge_48
+		set_global_flag = generated_rouge_49
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_47 }
+		remove_global_flag = generated_rouge_47
+		set_global_flag = generated_rouge_48
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_46 }
+		remove_global_flag = generated_rouge_46
+		set_global_flag = generated_rouge_47
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_45 }
+		remove_global_flag = generated_rouge_45
+		set_global_flag = generated_rouge_46
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_44 }
+		remove_global_flag = generated_rouge_44
+		set_global_flag = generated_rouge_45
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_43 }
+		remove_global_flag = generated_rouge_43
+		set_global_flag = generated_rouge_44
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_42 }
+		remove_global_flag = generated_rouge_42
+		set_global_flag = generated_rouge_43
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_41 }
+		remove_global_flag = generated_rouge_41
+		set_global_flag = generated_rouge_42
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_40 }
+		remove_global_flag = generated_rouge_40
+		set_global_flag = generated_rouge_41
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_39 }
+		remove_global_flag = generated_rouge_39
+		set_global_flag = generated_rouge_40
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_38 }
+		remove_global_flag = generated_rouge_38
+		set_global_flag = generated_rouge_39
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_37 }
+		remove_global_flag = generated_rouge_37
+		set_global_flag = generated_rouge_38
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_36 }
+		remove_global_flag = generated_rouge_36
+		set_global_flag = generated_rouge_37
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_35 }
+		remove_global_flag = generated_rouge_35
+		set_global_flag = generated_rouge_36
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_34 }
+		remove_global_flag = generated_rouge_34
+		set_global_flag = generated_rouge_35
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_33 }
+		remove_global_flag = generated_rouge_33
+		set_global_flag = generated_rouge_34
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_32 }
+		remove_global_flag = generated_rouge_32
+		set_global_flag = generated_rouge_33
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_31 }
+		remove_global_flag = generated_rouge_31
+		set_global_flag = generated_rouge_32
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_30}
+		remove_global_flag = generated_rouge_30
+		set_global_flag = generated_rouge_31
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_29 }
+		remove_global_flag = generated_rouge_29
+		set_global_flag = generated_rouge_30
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_28 }
+		remove_global_flag = generated_rouge_28
+		set_global_flag = generated_rouge_29
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_27 }
+		remove_global_flag = generated_rouge_27
+		set_global_flag = generated_rouge_28
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_26 }
+		remove_global_flag = generated_rouge_26
+		set_global_flag = generated_rouge_27
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_25 }
+		remove_global_flag = generated_rouge_25
+		set_global_flag = generated_rouge_26
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_24 }
+		remove_global_flag = generated_rouge_24
+		set_global_flag = generated_rouge_25
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_23 }
+		remove_global_flag = generated_rouge_23
+		set_global_flag = generated_rouge_24
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_22 }
+		remove_global_flag = generated_rouge_22
+		set_global_flag = generated_rouge_23
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_21 }
+		remove_global_flag = generated_rouge_21
+		set_global_flag = generated_rouge_22
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_20 }
+		remove_global_flag = generated_rouge_20
+		set_global_flag = generated_rouge_21
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_19 }
+		remove_global_flag = generated_rouge_19
+		set_global_flag = generated_rouge_20
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_18 }
+		remove_global_flag = generated_rouge_18
+		set_global_flag = generated_rouge_19
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_17 }
+		remove_global_flag = generated_rouge_17
+		set_global_flag = generated_rouge_18
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_16 }
+		remove_global_flag = generated_rouge_16
+		set_global_flag = generated_rouge_17
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_15 }
+		remove_global_flag = generated_rouge_15
+		set_global_flag = generated_rouge_16
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_14 }
+		remove_global_flag = generated_rouge_14
+		set_global_flag = generated_rouge_15
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_13 }
+		remove_global_flag = generated_rouge_13
+		set_global_flag = generated_rouge_14
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_12 }
+		remove_global_flag = generated_rouge_12
+		set_global_flag = generated_rouge_13
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_11 }
+		remove_global_flag = generated_rouge_11
+		set_global_flag = generated_rouge_12
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_10 }
+		remove_global_flag = generated_rouge_10
+		set_global_flag = generated_rouge_11
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_9 }
+		remove_global_flag = generated_rouge_9
+		set_global_flag = generated_rouge_10
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_8 }
+		remove_global_flag = generated_rouge_8
+		set_global_flag = generated_rouge_9
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_7 }
+		remove_global_flag = generated_rouge_7
+		set_global_flag = generated_rouge_8
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_6 }
+		remove_global_flag = generated_rouge_6
+		set_global_flag = generated_rouge_7
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_5 }
+		remove_global_flag = generated_rouge_5
+		set_global_flag = generated_rouge_6
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_4 }
+		remove_global_flag = generated_rouge_4
+		set_global_flag = generated_rouge_5
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_3 }
+		remove_global_flag = generated_rouge_3
+		set_global_flag = generated_rouge_4
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_2 }
+		remove_global_flag = generated_rouge_2
+		set_global_flag = generated_rouge_3
+		
+	}
+	if = {
+		limit = { has_global_flag = generated_rouge_1 }
+		remove_global_flag = generated_rouge_1
+		set_global_flag = generated_rouge_2
+		
+	}
+	if = {
+		limit = { has_global_flag = generate_rouge_planets }
+		set_global_flag = generated_rouge_1
+		
+	}
+	}
+	after = {
+	random_list = {
+		10 = {
+			random_system = {
+				spawn_system = {
+					min_distance = 20
+					max_distance = 50
+					initializer = "morestars_rouge_init_01"
+				}
+			}
+		}
+		10 = {
+			random_system = {
+				spawn_system = {
+					min_distance = 20
+					max_distance = 50
+					initializer = "morestars_rouge_init_02"
+				}
+			}
+		}
+		10 = {
+			random_system = {
+				spawn_system = {
+					min_distance = 20
+					max_distance = 50
+					initializer = "morestars_rouge_init_03"
+				}
+			}
+		}
+		10 = {
+			random_system = {
+				spawn_system = {
+					min_distance = 20
+					max_distance = 50
+					initializer = "morestars_rouge_init_04"
+				}
+			}
+		}
+		10 = {
+			random_system = {
+				spawn_system = {
+					min_distance = 20
+					max_distance = 50
+					initializer = "morestars_rouge_init_05"
+				}
+			}
+		}
+		10 = {
+			random_system = {
+				spawn_system = {
+					min_distance = 20
+					max_distance = 50
+					initializer = "morestars_rouge_init_06"
+				}
+			}
+		}
+		10 = {
+			random_system = {
+				spawn_system = {
+					min_distance = 20
+					max_distance = 50
+					initializer = "morestars_rouge_init_07"
+				}
+			}
+		}
+		10 = {
+			random_system = {
+				spawn_system = {
+					min_distance = 20
+					max_distance = 50
+					initializer = "morestars_rouge_init_08"
+				}
+			}
+		}
+		10 = {
+			random_system = {
+				spawn_system = {
+					min_distance = 20
+					max_distance = 50
+					initializer = "morestars_rouge_init_09"
+				}
+			}
+		}
+		5 = {
+			random_system = {
+				spawn_system = {
+					min_distance = 20
+					max_distance = 50
+					initializer = "morestars_rouge_init_10"
+				}
+			}
+		}
+	}
+	}
+}

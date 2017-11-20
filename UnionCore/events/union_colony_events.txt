@@ -1,0 +1,925 @@
+############################
+#
+# Colony Events
+#
+# Written by Henrik Eklund
+#
+############################
+
+namespace = colony
+
+@tier1influencecontact = 7
+@tier1influencecontactxenophile = 8
+@tier1influencecontactmin = 20
+@tier1influencecontactmax = 80
+
+@tier2influencecontact = 10
+@tier2influencecontactxenophile = 12
+@tier2influencecontactmin = 40
+@tier2influencecontactmax = 100
+
+@tier1materialreward = 6
+@tier1materialmin = 100
+@tier1materialmax = 500
+@tier2materialreward = 12
+@tier2materialmin = 150
+@tier2materialmax = 1000
+@tier3materialreward = 18
+@tier3materialmin = 250
+@tier3materialmax = 1500
+@tier4materialreward = 24
+@tier4materialmin = 350
+@tier4materialmax = 2000
+@tier5materialreward = 48
+@tier5materialmin = 700
+@tier5materialmax = 4000
+
+@tier1influencereward = 6
+@tier1influencemin = 40
+@tier1influencemax = 100
+@tier2influencereward = 12
+@tier2influencemin = 80
+@tier2influencemax = 175
+@tier3influencereward = 18
+@tier3influencemin = 125
+@tier3influencemax = 250
+@tier4influencereward = 24
+@tier4influencemin = 150
+@tier4influencemax = 300
+@tier5influencereward = 36
+@tier5influencemin = 250
+@tier5influencemax = 500
+@tier6influencereward = 48
+@tier6influencemin = 300
+@tier6influencemax = 600
+
+@tier1researchreward = 6
+@tier1researchmin = 60
+@tier1researchmax = 150
+@tier2researchreward = 12
+@tier2researchmin = 90
+@tier2researchmax = 250
+@tier3researchreward = 18
+@tier3researchmin = 120
+@tier3researchmax = 350
+@tier4researchreward = 24
+@tier4researchmin = 150
+@tier4researchmax = 500
+@tier5researchreward = 48
+@tier5researchmin = 300
+@tier5researchmax = 1000
+
+
+### Abandoned Terraforming Equipment
+planet_event = {
+	id = colony.100
+	title = "colony.100.name"
+	desc = "colony.100.desc"
+	picture = GFX_evt_underground_civilization
+	show_sound = event_mystic_reveal
+	location = ROOT
+	
+	trigger = {
+		has_owner = yes
+		original_owner = yes
+		is_homeworld = no
+		owner = { is_ai = no }
+		has_ground_combat = no
+		is_occupied_flag = no
+		num_pops > 0
+		is_capital = no
+		NOR = {
+			has_planet_flag = abandoned_terraforming_planet
+			has_planet_flag = pm_is_wondrous_world # -guilli
+			has_planet_flag = colony_event
+			is_planet_class = pc_nuked
+			is_planet_class = pc_gaia
+			is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_habitat
+			owner = { has_country_flag = abandoned_terraforming_country }
+			owner = { has_authority = auth_machine_intelligence }
+			AND = {
+				owner = { 
+							OR = {
+							ideal_planet_class = pc_arid 
+							ideal_planet_class = pc_NH3arid
+							ideal_planet_class = pc_N2arid
+							ideal_planet_class = pc_SO2arid
+							ideal_planet_class = pc_CH4arid
+							ideal_planet_class = pc_CO2N2arid
+							ideal_planet_class = pc_CO2arid
+							ideal_planet_class = pc_CO2mesa
+							ideal_planet_class = pc_N2mesa
+							ideal_planet_class = pc_CH4mesa
+							ideal_planet_class = pc_SO2mesa
+							ideal_planet_class = pc_NH3mesa
+							ideal_planet_class = pc_mesa
+							ideal_planet_class = pc_CO2N2mesa									
+						}
+					}
+				is_planet_arids = yes
+			}
+			AND = {
+				owner = { OR = {
+							ideal_planet_class = pc_desert
+							ideal_planet_class = pc_NH3desert
+							ideal_planet_class = pc_N2desert
+							ideal_planet_class = pc_SO2desert
+							ideal_planet_class = pc_CH4desert
+							ideal_planet_class = pc_CO2N2desert
+							ideal_planet_class = pc_CO2desert		
+							ideal_planet_class = pc_CO2sandsea_planet
+							ideal_planet_class = pc_N2sandsea_planet
+							ideal_planet_class = pc_CH4sandsea_planet
+							ideal_planet_class = pc_SO2sandsea_planet
+							ideal_planet_class = pc_NH3sandsea_planet
+							ideal_planet_class = pc_sandsea_planet
+							ideal_planet_class = pc_CO2N2sandsea_planet
+							ideal_planet_class = pc_CO2desertislands
+							ideal_planet_class = pc_N2desertislands
+							ideal_planet_class = pc_CH4desertislands
+							ideal_planet_class = pc_SO2desertislands
+							ideal_planet_class = pc_NH3desertislands
+							ideal_planet_class = pc_CO2N2desertislands
+							ideal_planet_class = pc_desertislands
+							ideal_planet_class = pc_CO2oasis
+							ideal_planet_class = pc_N2oasis
+							ideal_planet_class = pc_CH4oasis
+							ideal_planet_class = pc_CO2N2oasis
+							ideal_planet_class = pc_SO2oasis
+							ideal_planet_class = pc_NH3oasis
+							ideal_planet_class = pc_oasis
+							ideal_planet_class = pc_CO2hadesert
+							ideal_planet_class = pc_N2hadesert
+							ideal_planet_class = pc_CH4hadesert
+							ideal_planet_class = pc_SO2hadesert
+							ideal_planet_class = pc_NH3hadesert
+							ideal_planet_class = pc_CO2N2hadesert
+							ideal_planet_class = pc_hadesert
+						}
+					}
+				is_planet_deserts = yes
+			}
+			AND = {
+				owner = { OR = {
+							ideal_planet_class = pc_tropical
+							ideal_planet_class = pc_NH3tropical
+							ideal_planet_class = pc_N2tropical
+							ideal_planet_class = pc_SO2tropical
+							ideal_planet_class = pc_CH4tropical
+							ideal_planet_class = pc_CO2N2tropical
+							ideal_planet_class = pc_CO2tropical
+							ideal_planet_class = pc_troppel
+							ideal_planet_class = pc_CO2hajungle
+							ideal_planet_class = pc_N2hajungle
+							ideal_planet_class = pc_CH4hajungle
+							ideal_planet_class = pc_SO2hajungle
+							ideal_planet_class = pc_NH3hajungle
+							ideal_planet_class = pc_hajungle
+							ideal_planet_class = pc_CO2N2hajungle
+							ideal_planet_class = pc_CO2mangrove
+							ideal_planet_class = pc_N2mangrove
+							ideal_planet_class = pc_CH4mangrove
+							ideal_planet_class = pc_SO2mangrove
+							ideal_planet_class = pc_NH3mangrove
+							ideal_planet_class = pc_mangrove
+							ideal_planet_class = pc_CO2N2mangrove	
+							ideal_planet_class = pc_CO2swamp
+							ideal_planet_class = pc_N2swamp
+							ideal_planet_class = pc_CH4swamp
+							ideal_planet_class = pc_SO2swamp
+							ideal_planet_class = pc_NH3swamp
+							ideal_planet_class = pc_swamp
+							ideal_planet_class = pc_CO2N2swamp
+						} 
+					}
+				is_planet_jungle = yes
+			}
+			AND = {
+				owner = { OR = {
+						ideal_planet_class = pc_continental
+						ideal_planet_class = pc_NH3temperate
+						ideal_planet_class = pc_N2temperate
+						ideal_planet_class = pc_SO2temperate
+						ideal_planet_class = pc_CH4temperate
+						ideal_planet_class = pc_CO2N2temperate
+						ideal_planet_class = pc_CO2temperate	
+					} 	}
+				is_planet_baseline = yes
+			}
+			AND = {
+				owner = { OR = {
+					ideal_planet_class = pc_ocean
+					ideal_planet_class = pc_NH3ocean
+					ideal_planet_class = pc_N2ocean
+					ideal_planet_class = pc_SO2ocean
+					ideal_planet_class = pc_CH4ocean
+					ideal_planet_class = pc_CO2ocean
+					ideal_planet_class = pc_CO2N2ocean		
+				} 	}
+				is_planet_oceans = yes
+			}
+			AND = {
+				owner = { OR = {
+						ideal_planet_class = pc_NH3tundra
+						ideal_planet_class = pc_N2tundra
+						ideal_planet_class = pc_SO2tundra
+						ideal_planet_class = pc_CH4tundra
+						ideal_planet_class = pc_CO2N2tundra
+						ideal_planet_class = pc_CO2tundra
+						ideal_planet_class = pc_tundra	
+						ideal_planet_class = pc_CO2geothermal
+						ideal_planet_class = pc_N2geothermal
+						ideal_planet_class = pc_CH4geothermal
+						ideal_planet_class = pc_SO2geothermal
+						ideal_planet_class = pc_NH3geothermal
+						ideal_planet_class = pc_geothermal
+						ideal_planet_class = pc_CO2N2geothermal	
+						ideal_planet_class = pc_CO2cascadian
+						ideal_planet_class = pc_N2cascadian
+						ideal_planet_class = pc_CH4cascadian
+						ideal_planet_class = pc_SO2cascadian
+						ideal_planet_class = pc_NH3cascadian
+						ideal_planet_class = pc_cascadian
+						ideal_planet_class = pc_CO2N2cascadian
+						ideal_planet_class = pc_CO2steppe
+						ideal_planet_class = pc_N2steppe
+						ideal_planet_class = pc_CH4steppe
+						ideal_planet_class = pc_SO2steppe
+						ideal_planet_class = pc_NH3steppe
+						ideal_planet_class = pc_steppe
+						ideal_planet_class = pc_CO2N2steppe				
+				}	}
+				is_planet_tundra = yes
+			}
+			AND = {
+				owner = { OR = {
+						ideal_planet_class = pc_arctic
+						ideal_planet_class = pc_NH3arctic
+						ideal_planet_class = pc_SO2arctic
+						ideal_planet_class = pc_CH4arctic
+						ideal_planet_class = pc_CO2N2arctic
+						ideal_planet_class = pc_CO2arctic
+						ideal_planet_class = pc_arctpel
+						ideal_planet_class = pc_CO2frozen_desert
+						ideal_planet_class = pc_N2frozen_desert
+						ideal_planet_class = pc_CH4frozen_desert
+						ideal_planet_class = pc_SO2frozen_desert
+						ideal_planet_class = pc_NH3frozen_desert
+						ideal_planet_class = pc_frozen_desert
+						ideal_planet_class = pc_CO2N2frozen_desert
+						ideal_planet_class = pc_CO2glacial
+						ideal_planet_class = pc_N2glacial
+						ideal_planet_class = pc_CH4glacial
+						ideal_planet_class = pc_SO2glacial
+						ideal_planet_class = pc_NH3glacial
+						ideal_planet_class = pc_glacial
+						ideal_planet_class = pc_CO2N2glacial	
+						ideal_planet_class = pc_CO2subarctic
+						ideal_planet_class = pc_N2subarctic
+						ideal_planet_class = pc_CH4subarctic
+						ideal_planet_class = pc_SO2subarctic
+						ideal_planet_class = pc_NH3subarctic
+						ideal_planet_class = pc_subarctic
+						ideal_planet_class = pc_CO2N2subarctic	
+						ideal_planet_class = pc_CO2antarctic
+						ideal_planet_class = pc_N2antarctic
+						ideal_planet_class = pc_CH4antarctic
+						ideal_planet_class = pc_SO2antarctic
+						ideal_planet_class = pc_NH3antarctic
+						ideal_planet_class = pc_CO2N2antarctic	
+						ideal_planet_class = pc_antarctic	
+				} 	}
+				is_planet_arctic = yes
+			}
+			AND = {
+				owner = { OR = {
+						ideal_planet_class = pc_alpine
+						ideal_planet_class = pc_NH3alpine
+						ideal_planet_class = pc_N2alpine
+						ideal_planet_class = pc_SO2alpine
+						ideal_planet_class = pc_CH4alpine
+						ideal_planet_class = pc_CO2N2alpine
+						ideal_planet_class = pc_CO2alpine
+						ideal_planet_class = pc_alpine
+	
+				} 	}
+				is_planet_alpine = yes
+			}
+			AND = {
+				owner = { OR = {
+						ideal_planet_class = pc_savannah
+						ideal_planet_class = pc_NH3savannah
+						ideal_planet_class = pc_N2savannah
+						ideal_planet_class = pc_SO2savannah
+						ideal_planet_class = pc_CH4savannah
+						ideal_planet_class = pc_CO2N2savannah
+						ideal_planet_class = pc_CO2savannah
+				}	}
+				is_planet_savannahs = yes
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	#mean_time_to_happen = {
+	#	months = 640
+	#}
+	
+	immediate = {
+		set_planet_flag = abandoned_terraforming_planet
+		set_planet_flag = colony_event
+		owner = { set_country_flag = abandoned_terraforming_country }
+	}
+	
+	option = {
+		name = colony.100.a
+		hidden_effect = {
+			add_modifier = {
+				modifier = "abandoned_terraforming"
+				days = -1
+			}
+		}
+		begin_event_chain = {
+			event_chain = "abandoned_terraforming_chain"
+			target = ROOT
+		}
+		enable_special_project = {
+			name = "ABANDONED_TERRAFORMING_1_PROJECT"
+			location = this
+			owner = root
+		}
+		enable_special_project = {
+			name = "ABANDONED_TERRAFORMING_2_PROJECT"
+			location = this
+			owner = root
+		}
+	}
+}
+
+
+# Special Project Completed 1
+planet_event = {
+	id = colony.104
+	title = "PROJECT_COMPLETE"
+	desc = "colony.104.desc"
+	picture = GFX_evt_alien_nature
+	show_sound = event_activating_unknown_technology
+	location = ROOT
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = colony.104.a
+		custom_tooltip = abandoned_terraforming_completed
+		hidden_effect = {
+			remove_modifier = "abandoned_terraforming"
+			switch = {
+				trigger = is_planet_class
+				pc_NH3desert = { change_pc = "rl_habitable_normal" }
+				pc_N2desert = { change_pc = "rl_habitable_normal" }
+				pc_SO2desert = { change_pc = "rl_habitable_normal" }
+				pc_CH4desert = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2desert = { change_pc = "rl_habitable_normal" }
+				pc_CO2desert = { change_pc = "rl_habitable_normal" }
+				pc_CO2sandsea_planet = { change_pc = "rl_habitable_normal" }
+				pc_CO2desertislands = { change_pc = "rl_habitable_normal" }
+				pc_CO2hadesert = { change_pc = "rl_habitable_normal" }
+				pc_CO2oasis = { change_pc = "rl_habitable_normal" }
+				pc_N2sandsea_planet = { change_pc = "rl_habitable_normal" }
+				pc_N2desertislands = { change_pc = "rl_habitable_normal" }
+				pc_N2hadesert = { change_pc = "rl_habitable_normal" }
+				pc_N2oasis = { change_pc = "rl_habitable_normal" }
+				pc_CH4sandsea_planet = { change_pc = "rl_habitable_normal" }
+				pc_CH4desertislands = { change_pc = "rl_habitable_normal" }
+				pc_CH4hadesert = { change_pc = "rl_habitable_normal" }
+				pc_CH4oasis = { change_pc = "rl_habitable_normal" }
+				pc_SO2sandsea_planet = { change_pc = "rl_habitable_normal" }
+				pc_SO2desertislands = { change_pc = "rl_habitable_normal" }
+				pc_SO2hadesert = { change_pc = "rl_habitable_normal" }
+				pc_NH3sandsea_planet = { change_pc = "rl_habitable_normal" }
+				pc_NH3desertislands = { change_pc = "rl_habitable_normal" }
+				pc_NH3hadesert = { change_pc = "rl_habitable_normal" }
+				pc_sandsea_planet = { change_pc = "rl_habitable_normal" }
+				pc_desertislands = { change_pc = "rl_habitable_normal" }
+				pc_hadesert = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2sandsea_planet = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2desertislands = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2hadesert = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2oasis = { change_pc = "rl_habitable_normal" }
+				pc_SO2oasis = { change_pc = "rl_habitable_normal" }
+				pc_NH3oasis = { change_pc = "rl_habitable_normal" }
+				pc_oasis = { change_pc = "rl_habitable_normal" }
+				pc_NH3arctic = { change_pc = "rl_habitable_normal" }
+				pc_SO2arctic = { change_pc = "rl_habitable_normal" }
+				pc_CH4arctic = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2arctic = { change_pc = "rl_habitable_normal" }
+				pc_CO2arctic = { change_pc = "rl_habitable_normal" }
+				pc_arctpel = { change_pc = "rl_habitable_normal" }
+				pc_CO2frozen_desert = { change_pc = "rl_habitable_normal" }
+				pc_CO2subarctic = { change_pc = "rl_habitable_normal" }
+				pc_CO2antarctic = { change_pc = "rl_habitable_normal" }
+				pc_CO2glacial = { change_pc = "rl_habitable_normal" }
+				pc_N2frozen_desert = { change_pc = "rl_habitable_normal" }
+				pc_N2subarctic = { change_pc = "rl_habitable_normal" }
+				pc_N2antarctic = { change_pc = "rl_habitable_normal" }
+				pc_N2glacial = { change_pc = "rl_habitable_normal" }
+				pc_CH4frozen_desert = { change_pc = "rl_habitable_normal" }
+				pc_CH4subarctic = { change_pc = "rl_habitable_normal" }
+				pc_CH4antarctic = { change_pc = "rl_habitable_normal" }
+				pc_CH4glacial = { change_pc = "rl_habitable_normal" }
+				pc_SO2frozen_desert = { change_pc = "rl_habitable_normal" }
+				pc_SO2subarctic = { change_pc = "rl_habitable_normal" }
+				pc_SO2antarctic = { change_pc = "rl_habitable_normal" }
+				pc_SO2glacial = { change_pc = "rl_habitable_normal" }
+				pc_NH3frozen_desert = { change_pc = "rl_habitable_normal" }
+				pc_NH3subarctic = { change_pc = "rl_habitable_normal" }
+				pc_NH3antarctic = { change_pc = "rl_habitable_normal" }
+				pc_NH3glacial = { change_pc = "rl_habitable_normal" }
+				pc_frozen_desert = { change_pc = "rl_habitable_normal" }
+				pc_subarctic = { change_pc = "rl_habitable_normal" }
+				pc_antarctic = { change_pc = "rl_habitable_normal" }
+				pc_glacial = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2frozen_desert = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2subarctic = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2antarctic = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2glacial = { change_pc = "rl_habitable_normal" }
+				pc_NH3tundra = { change_pc = "rl_habitable_normal" }
+				pc_N2tundra = { change_pc = "rl_habitable_normal" }
+				pc_SO2tundra = { change_pc = "rl_habitable_normal" }
+				pc_CH4tundra = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2tundra = { change_pc = "rl_habitable_normal" }
+				pc_CO2tundra = { change_pc = "rl_habitable_normal" }
+				pc_CO2steppe = { change_pc = "rl_habitable_normal" }
+				pc_CO2cascadian = { change_pc = "rl_habitable_normal" }
+				pc_CO2geothermal = { change_pc = "rl_habitable_normal" }
+				pc_N2steppe = { change_pc = "rl_habitable_normal" }
+				pc_N2cascadian = { change_pc = "rl_habitable_normal" }
+				pc_N2geothermal = { change_pc = "rl_habitable_normal" }
+				pc_CH4steppe = { change_pc = "rl_habitable_normal" }
+				pc_CH4cascadian = { change_pc = "rl_habitable_normal" }
+				pc_CH4geothermal = { change_pc = "rl_habitable_normal" }
+				pc_SO2steppe = { change_pc = "rl_habitable_normal" }
+				pc_SO2cascadian = { change_pc = "rl_habitable_normal" }
+				pc_SO2geothermal = { change_pc = "rl_habitable_normal" }
+				pc_NH3steppe = { change_pc = "rl_habitable_normal" }
+				pc_NH3cascadian = { change_pc = "rl_habitable_normal" }
+				pc_NH3geothermal = { change_pc = "rl_habitable_normal" }
+				pc_steppe = { change_pc = "rl_habitable_normal" }
+				pc_cascadian = { change_pc = "rl_habitable_normal" }
+				pc_geothermal = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2steppe = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2cascadian = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2geothermal = { change_pc = "rl_habitable_normal" }
+				pc_tundra = { change_pc = "rl_habitable_normal" }
+				pc_NH3savannah = { change_pc = "rl_habitable_normal" }
+				pc_N2savannah = { change_pc = "rl_habitable_normal" }
+				pc_SO2savannah = { change_pc = "rl_habitable_normal" }
+				pc_CH4savannah = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2savannah = { change_pc = "rl_habitable_normal" }
+				pc_CO2savannah = { change_pc = "rl_habitable_normal" }
+				pc_savannah = { change_pc = "rl_habitable_normal" }
+				pc_NH3arid = { change_pc = "rl_habitable_normal" }
+				pc_N2arid = { change_pc = "rl_habitable_normal" }
+				pc_SO2arid = { change_pc = "rl_habitable_normal" }
+				pc_CH4arid = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2arid = { change_pc = "rl_habitable_normal" }
+				pc_CO2arid = { change_pc = "rl_habitable_normal" }
+				pc_CO2mesa = { change_pc = "rl_habitable_normal" }
+				pc_N2mesa = { change_pc = "rl_habitable_normal" }
+				pc_N2oasis = { change_pc = "rl_habitable_normal" }
+				pc_CH4mesa = { change_pc = "rl_habitable_normal" }
+				pc_SO2mesa = { change_pc = "rl_habitable_normal" }
+				pc_NH3mesa = { change_pc = "rl_habitable_normal" }
+				pc_mesa = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2mesa = { change_pc = "rl_habitable_normal" }
+				pc_arid = { change_pc = "rl_habitable_normal" }
+				pc_NH3temperate = { change_pc = "rl_habitable_normal" }
+				pc_N2temperate = { change_pc = "rl_habitable_normal" }
+				pc_SO2temperate = { change_pc = "rl_habitable_normal" }
+				pc_CH4temperate = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2temperate = { change_pc = "rl_habitable_normal" }
+				pc_CO2temperate = { change_pc = "rl_habitable_normal" }
+				pc_continental = { change_pc = "rl_habitable_normal" }
+				pc_NH3tropical = { change_pc = "rl_habitable_normal" }
+				pc_N2tropical = { change_pc = "rl_habitable_normal" }
+				pc_SO2tropical = { change_pc = "rl_habitable_normal" }
+				pc_CH4tropical = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2tropical = { change_pc = "rl_habitable_normal" }
+				pc_CO2tropical = { change_pc = "rl_habitable_normal" }
+				pc_troppel = { change_pc = "rl_habitable_normal" }
+				pc_CO2hajungle = { change_pc = "rl_habitable_normal" }
+				pc_CO2swamp = { change_pc = "rl_habitable_normal" }
+				pc_CO2mangrove = { change_pc = "rl_habitable_normal" }
+				pc_N2hajungle = { change_pc = "rl_habitable_normal" }
+				pc_N2swamp = { change_pc = "rl_habitable_normal" }
+				pc_N2mangrove = { change_pc = "rl_habitable_normal" }
+				pc_CH4hajungle = { change_pc = "rl_habitable_normal" }
+				pc_CH4swamp = { change_pc = "rl_habitable_normal" }
+				pc_CH4mangrove = { change_pc = "rl_habitable_normal" }
+				pc_SO2hajungle = { change_pc = "rl_habitable_normal" }
+				pc_SO2swamp = { change_pc = "rl_habitable_normal" }
+				pc_SO2mangrove = { change_pc = "rl_habitable_normal" }
+				pc_NH3hajungle = { change_pc = "rl_habitable_normal" }
+				pc_NH3swamp = { change_pc = "rl_habitable_normal" }
+				pc_NH3mangrove = { change_pc = "rl_habitable_normal" }
+				pc_hajungle = { change_pc = "rl_habitable_normal" }
+				pc_swamp = { change_pc = "rl_habitable_normal" }
+				pc_mangrove = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2hajungle = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2swamp = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2mangrove = { change_pc = "rl_habitable_normal" }
+				pc_tropical = { change_pc = "rl_habitable_normal" }
+				pc_vacchotplanetoid = { change_pc = "rl_habitable_normal" }
+				pc_vaccplanetoid = { change_pc = "rl_habitable_normal" }
+				pc_vacccoldplanetoid = { change_pc = "rl_habitable_normal" }
+				pc_vaccfrozenplanetoid = { change_pc = "rl_habitable_normal" }
+				pc_NH3ocean = { change_pc = "rl_habitable_normal" }
+				pc_N2ocean = { change_pc = "rl_habitable_normal" }
+				pc_SO2ocean = { change_pc = "rl_habitable_normal" }
+				pc_CH4ocean = { change_pc = "rl_habitable_normal" }
+				pc_CO2ocean = { change_pc = "rl_habitable_normal" }
+				pc_ocean = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2ocean = { change_pc = "rl_habitable_normal" }
+				pc_NH3alpine = { change_pc = "rl_habitable_normal" }
+				pc_N2alpine = { change_pc = "rl_habitable_normal" }
+				pc_SO2alpine = { change_pc = "rl_habitable_normal" }
+				pc_CH4alpine = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2alpine = { change_pc = "rl_habitable_normal" }
+				pc_CO2alpine = { change_pc = "rl_habitable_normal" }
+				pc_alpine = { change_pc = "rl_habitable_normal" }
+				pc_CO2greenhouse_hot = { change_pc = "rl_habitable_normal" }
+				pc_NH3greenhouse_hot = { change_pc = "rl_habitable_normal" }
+				pc_N2greenhouse_hot = { change_pc = "rl_habitable_normal" }
+				pc_SO2greenhouse_hot = { change_pc = "rl_habitable_normal" }
+				pc_CH4greenhouse_hot = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2greenhouse_hot = { change_pc = "rl_habitable_normal" }
+				pc_greenhouse_hot = { change_pc = "rl_habitable_normal" }
+				pc_NH3temperate = { change_pc = "rl_habitable_normal" }
+				pc_N2temperate = { change_pc = "rl_habitable_normal" }
+				pc_SO2temperate = { change_pc = "rl_habitable_normal" }
+				pc_CH4temperate = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2temperate = { change_pc = "rl_habitable_normal" }
+				pc_CO2temperate = { change_pc = "rl_habitable_normal" }
+				pc_continental = { change_pc = "rl_habitable_normal" }
+			}
+				if = { 
+					limit = { 
+						has_global_flag = union_planmodif_active				
+							if = {									# -guilli
+							limit = {
+							NOR = {
+								has_modifier = "Precursor_Remnants"
+								has_modifier = "Precursor_Energy_Grid"
+								has_modifier = "Precursor_Satalite_Grid"
+								has_modifier = "Precursor_City"
+								has_modifier = "Precursor_Shipyards"
+								has_modifier = "Precursor_Planetary_Gun"
+								has_modifier = "Precursor_Bunker_Grid"
+								has_modifier = "Precursor_Mechs"
+								has_modifier = "Precursor_Planetary_Shield"
+								has_modifier = "Precursor_Floating_City"
+								has_modifier = "Precursor_Capital_Complex"
+								has_modifier = "Precursor_Communication_Hub"
+								has_modifier = "Precursor_Singularity_Drive"
+							}
+						}
+						reroll_planet_modifiers = yes		# -guilli
+						c_remove_precursor_modifiers = yes 	# -guilli
+					}
+				}
+			}
+		}
+	}
+}
+
+
+# Special Project Completed 2 (Mutated Creatures)
+planet_event = {
+	id = colony.105
+	title = "PROJECT_COMPLETE"
+	desc = "colony.105.desc"
+	picture = GFX_evt_ground_combat
+	show_sound = event_ground_battle
+	location = ROOT
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			switch = {
+				trigger = is_planet_class
+				pc_NH3desert = { change_pc = "rl_habitable_normal" }
+				pc_N2desert = { change_pc = "rl_habitable_normal" }
+				pc_SO2desert = { change_pc = "rl_habitable_normal" }
+				pc_CH4desert = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2desert = { change_pc = "rl_habitable_normal" }
+				pc_CO2desert = { change_pc = "rl_habitable_normal" }
+				pc_CO2sandsea_planet = { change_pc = "rl_habitable_normal" }
+				pc_CO2desertislands = { change_pc = "rl_habitable_normal" }
+				pc_CO2hadesert = { change_pc = "rl_habitable_normal" }
+				pc_CO2oasis = { change_pc = "rl_habitable_normal" }
+				pc_N2sandsea_planet = { change_pc = "rl_habitable_normal" }
+				pc_N2desertislands = { change_pc = "rl_habitable_normal" }
+				pc_N2hadesert = { change_pc = "rl_habitable_normal" }
+				pc_N2oasis = { change_pc = "rl_habitable_normal" }
+				pc_CH4sandsea_planet = { change_pc = "rl_habitable_normal" }
+				pc_CH4desertislands = { change_pc = "rl_habitable_normal" }
+				pc_CH4hadesert = { change_pc = "rl_habitable_normal" }
+				pc_CH4oasis = { change_pc = "rl_habitable_normal" }
+				pc_SO2sandsea_planet = { change_pc = "rl_habitable_normal" }
+				pc_SO2desertislands = { change_pc = "rl_habitable_normal" }
+				pc_SO2hadesert = { change_pc = "rl_habitable_normal" }
+				pc_NH3sandsea_planet = { change_pc = "rl_habitable_normal" }
+				pc_NH3desertislands = { change_pc = "rl_habitable_normal" }
+				pc_NH3hadesert = { change_pc = "rl_habitable_normal" }
+				pc_sandsea_planet = { change_pc = "rl_habitable_normal" }
+				pc_desertislands = { change_pc = "rl_habitable_normal" }
+				pc_hadesert = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2sandsea_planet = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2desertislands = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2hadesert = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2oasis = { change_pc = "rl_habitable_normal" }
+				pc_SO2oasis = { change_pc = "rl_habitable_normal" }
+				pc_NH3oasis = { change_pc = "rl_habitable_normal" }
+				pc_oasis = { change_pc = "rl_habitable_normal" }
+				pc_NH3arctic = { change_pc = "rl_habitable_normal" }
+				pc_SO2arctic = { change_pc = "rl_habitable_normal" }
+				pc_CH4arctic = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2arctic = { change_pc = "rl_habitable_normal" }
+				pc_CO2arctic = { change_pc = "rl_habitable_normal" }
+				pc_arctpel = { change_pc = "rl_habitable_normal" }
+				pc_CO2frozen_desert = { change_pc = "rl_habitable_normal" }
+				pc_CO2subarctic = { change_pc = "rl_habitable_normal" }
+				pc_CO2antarctic = { change_pc = "rl_habitable_normal" }
+				pc_CO2glacial = { change_pc = "rl_habitable_normal" }
+				pc_N2frozen_desert = { change_pc = "rl_habitable_normal" }
+				pc_N2subarctic = { change_pc = "rl_habitable_normal" }
+				pc_N2antarctic = { change_pc = "rl_habitable_normal" }
+				pc_N2glacial = { change_pc = "rl_habitable_normal" }
+				pc_CH4frozen_desert = { change_pc = "rl_habitable_normal" }
+				pc_CH4subarctic = { change_pc = "rl_habitable_normal" }
+				pc_CH4antarctic = { change_pc = "rl_habitable_normal" }
+				pc_CH4glacial = { change_pc = "rl_habitable_normal" }
+				pc_SO2frozen_desert = { change_pc = "rl_habitable_normal" }
+				pc_SO2subarctic = { change_pc = "rl_habitable_normal" }
+				pc_SO2antarctic = { change_pc = "rl_habitable_normal" }
+				pc_SO2glacial = { change_pc = "rl_habitable_normal" }
+				pc_NH3frozen_desert = { change_pc = "rl_habitable_normal" }
+				pc_NH3subarctic = { change_pc = "rl_habitable_normal" }
+				pc_NH3antarctic = { change_pc = "rl_habitable_normal" }
+				pc_NH3glacial = { change_pc = "rl_habitable_normal" }
+				pc_frozen_desert = { change_pc = "rl_habitable_normal" }
+				pc_subarctic = { change_pc = "rl_habitable_normal" }
+				pc_antarctic = { change_pc = "rl_habitable_normal" }
+				pc_glacial = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2frozen_desert = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2subarctic = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2antarctic = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2glacial = { change_pc = "rl_habitable_normal" }
+				pc_NH3tundra = { change_pc = "rl_habitable_normal" }
+				pc_N2tundra = { change_pc = "rl_habitable_normal" }
+				pc_SO2tundra = { change_pc = "rl_habitable_normal" }
+				pc_CH4tundra = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2tundra = { change_pc = "rl_habitable_normal" }
+				pc_CO2tundra = { change_pc = "rl_habitable_normal" }
+				pc_CO2steppe = { change_pc = "rl_habitable_normal" }
+				pc_CO2cascadian = { change_pc = "rl_habitable_normal" }
+				pc_CO2geothermal = { change_pc = "rl_habitable_normal" }
+				pc_N2steppe = { change_pc = "rl_habitable_normal" }
+				pc_N2cascadian = { change_pc = "rl_habitable_normal" }
+				pc_N2geothermal = { change_pc = "rl_habitable_normal" }
+				pc_CH4steppe = { change_pc = "rl_habitable_normal" }
+				pc_CH4cascadian = { change_pc = "rl_habitable_normal" }
+				pc_CH4geothermal = { change_pc = "rl_habitable_normal" }
+				pc_SO2steppe = { change_pc = "rl_habitable_normal" }
+				pc_SO2cascadian = { change_pc = "rl_habitable_normal" }
+				pc_SO2geothermal = { change_pc = "rl_habitable_normal" }
+				pc_NH3steppe = { change_pc = "rl_habitable_normal" }
+				pc_NH3cascadian = { change_pc = "rl_habitable_normal" }
+				pc_NH3geothermal = { change_pc = "rl_habitable_normal" }
+				pc_steppe = { change_pc = "rl_habitable_normal" }
+				pc_cascadian = { change_pc = "rl_habitable_normal" }
+				pc_geothermal = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2steppe = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2cascadian = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2geothermal = { change_pc = "rl_habitable_normal" }
+				pc_tundra = { change_pc = "rl_habitable_normal" }
+				pc_NH3savannah = { change_pc = "rl_habitable_normal" }
+				pc_N2savannah = { change_pc = "rl_habitable_normal" }
+				pc_SO2savannah = { change_pc = "rl_habitable_normal" }
+				pc_CH4savannah = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2savannah = { change_pc = "rl_habitable_normal" }
+				pc_CO2savannah = { change_pc = "rl_habitable_normal" }
+				pc_savannah = { change_pc = "rl_habitable_normal" }
+				pc_NH3arid = { change_pc = "rl_habitable_normal" }
+				pc_N2arid = { change_pc = "rl_habitable_normal" }
+				pc_SO2arid = { change_pc = "rl_habitable_normal" }
+				pc_CH4arid = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2arid = { change_pc = "rl_habitable_normal" }
+				pc_CO2arid = { change_pc = "rl_habitable_normal" }
+				pc_CO2mesa = { change_pc = "rl_habitable_normal" }
+				pc_N2mesa = { change_pc = "rl_habitable_normal" }
+				pc_N2oasis = { change_pc = "rl_habitable_normal" }
+				pc_CH4mesa = { change_pc = "rl_habitable_normal" }
+				pc_SO2mesa = { change_pc = "rl_habitable_normal" }
+				pc_NH3mesa = { change_pc = "rl_habitable_normal" }
+				pc_mesa = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2mesa = { change_pc = "rl_habitable_normal" }
+				pc_arid = { change_pc = "rl_habitable_normal" }
+				pc_NH3temperate = { change_pc = "rl_habitable_normal" }
+				pc_N2temperate = { change_pc = "rl_habitable_normal" }
+				pc_SO2temperate = { change_pc = "rl_habitable_normal" }
+				pc_CH4temperate = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2temperate = { change_pc = "rl_habitable_normal" }
+				pc_CO2temperate = { change_pc = "rl_habitable_normal" }
+				pc_continental = { change_pc = "rl_habitable_normal" }
+				pc_NH3tropical = { change_pc = "rl_habitable_normal" }
+				pc_N2tropical = { change_pc = "rl_habitable_normal" }
+				pc_SO2tropical = { change_pc = "rl_habitable_normal" }
+				pc_CH4tropical = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2tropical = { change_pc = "rl_habitable_normal" }
+				pc_CO2tropical = { change_pc = "rl_habitable_normal" }
+				pc_troppel = { change_pc = "rl_habitable_normal" }
+				pc_CO2hajungle = { change_pc = "rl_habitable_normal" }
+				pc_CO2swamp = { change_pc = "rl_habitable_normal" }
+				pc_CO2mangrove = { change_pc = "rl_habitable_normal" }
+				pc_N2hajungle = { change_pc = "rl_habitable_normal" }
+				pc_N2swamp = { change_pc = "rl_habitable_normal" }
+				pc_N2mangrove = { change_pc = "rl_habitable_normal" }
+				pc_CH4hajungle = { change_pc = "rl_habitable_normal" }
+				pc_CH4swamp = { change_pc = "rl_habitable_normal" }
+				pc_CH4mangrove = { change_pc = "rl_habitable_normal" }
+				pc_SO2hajungle = { change_pc = "rl_habitable_normal" }
+				pc_SO2swamp = { change_pc = "rl_habitable_normal" }
+				pc_SO2mangrove = { change_pc = "rl_habitable_normal" }
+				pc_NH3hajungle = { change_pc = "rl_habitable_normal" }
+				pc_NH3swamp = { change_pc = "rl_habitable_normal" }
+				pc_NH3mangrove = { change_pc = "rl_habitable_normal" }
+				pc_hajungle = { change_pc = "rl_habitable_normal" }
+				pc_swamp = { change_pc = "rl_habitable_normal" }
+				pc_mangrove = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2hajungle = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2swamp = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2mangrove = { change_pc = "rl_habitable_normal" }
+				pc_tropical = { change_pc = "rl_habitable_normal" }
+				pc_vacchotplanetoid = { change_pc = "rl_habitable_normal" }
+				pc_vaccplanetoid = { change_pc = "rl_habitable_normal" }
+				pc_vacccoldplanetoid = { change_pc = "rl_habitable_normal" }
+				pc_vaccfrozenplanetoid = { change_pc = "rl_habitable_normal" }
+				pc_NH3ocean = { change_pc = "rl_habitable_normal" }
+				pc_N2ocean = { change_pc = "rl_habitable_normal" }
+				pc_SO2ocean = { change_pc = "rl_habitable_normal" }
+				pc_CH4ocean = { change_pc = "rl_habitable_normal" }
+				pc_CO2ocean = { change_pc = "rl_habitable_normal" }
+				pc_ocean = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2ocean = { change_pc = "rl_habitable_normal" }
+				pc_NH3alpine = { change_pc = "rl_habitable_normal" }
+				pc_N2alpine = { change_pc = "rl_habitable_normal" }
+				pc_SO2alpine = { change_pc = "rl_habitable_normal" }
+				pc_CH4alpine = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2alpine = { change_pc = "rl_habitable_normal" }
+				pc_CO2alpine = { change_pc = "rl_habitable_normal" }
+				pc_alpine = { change_pc = "rl_habitable_normal" }
+				pc_CO2greenhouse_hot = { change_pc = "rl_habitable_normal" }
+				pc_NH3greenhouse_hot = { change_pc = "rl_habitable_normal" }
+				pc_N2greenhouse_hot = { change_pc = "rl_habitable_normal" }
+				pc_SO2greenhouse_hot = { change_pc = "rl_habitable_normal" }
+				pc_CH4greenhouse_hot = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2greenhouse_hot = { change_pc = "rl_habitable_normal" }
+				pc_greenhouse_hot = { change_pc = "rl_habitable_normal" }
+				pc_NH3temperate = { change_pc = "rl_habitable_normal" }
+				pc_N2temperate = { change_pc = "rl_habitable_normal" }
+				pc_SO2temperate = { change_pc = "rl_habitable_normal" }
+				pc_CH4temperate = { change_pc = "rl_habitable_normal" }
+				pc_CO2N2temperate = { change_pc = "rl_habitable_normal" }
+				pc_CO2temperate = { change_pc = "rl_habitable_normal" }
+				pc_continental = { change_pc = "rl_habitable_normal" }
+			}
+			remove_modifier = "abandoned_terraforming"
+			owner = { set_country_flag = terraforming_mutants_invade_country }
+			set_planet_flag = terraforming_mutants_invade_planet
+			create_country = {
+				name = "NAME_Deformed_Creatures"
+				type = faction
+			}
+			create_army = {
+				name = "NAME_Deformed_Creatures"
+				owner = last_created
+				type = "mutant_army"
+			}
+			create_army = {
+				name = "NAME_Twisted_Beasts"
+				owner = last_created
+				type = "mutant_army"
+			}
+			create_army = {
+				name = "NAME_Mutated_Horrors"
+				owner = last_created
+				type = "mutant_army"
+			}
+			
+			if = { 
+				limit = { 
+					has_global_flag = union_planmodif_active				
+					if = {									# -guilli
+						limit = {
+							NOR = {
+								has_modifier = "Precursor_Remnants"
+								has_modifier = "Precursor_Energy_Grid"
+								has_modifier = "Precursor_Satalite_Grid"
+								has_modifier = "Precursor_City"
+								has_modifier = "Precursor_Shipyards"
+								has_modifier = "Precursor_Planetary_Gun"
+								has_modifier = "Precursor_Bunker_Grid"
+								has_modifier = "Precursor_Mechs"
+								has_modifier = "Precursor_Planetary_Shield"
+								has_modifier = "Precursor_Floating_City"
+								has_modifier = "Precursor_Capital_Complex"
+								has_modifier = "Precursor_Communication_Hub"
+								has_modifier = "Precursor_Singularity_Drive"
+							}
+						}
+						reroll_planet_modifiers = yes		# -guilli
+						c_remove_precursor_modifiers = yes 	# -guilli
+					}
+				
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = colony.105.a
+		custom_tooltip = terraforming_mutants_attack
+	}	
+}
+
+
+# Special Project Completed 4 (Ammonia)
+planet_event = {
+	id = colony.107
+	title = "PROJECT_COMPLETE"
+	desc = "colony.107.desc"
+	picture = GFX_evt_dead_city
+	show_sound = event_activating_unknown_technology
+	location = ROOT
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = colony.107.a
+		change_pc = pc_NH3toxic
+		destroy_colony = { keep_buildings = no }
+		add_modifier = {
+			modifier = "ammonia_biosphere"
+			days = -1
+		}
+		orbital_deposit_tile = { 
+			add_deposit = d_vast_society_deposit
+		}
+		hidden_effect = {
+			remove_modifier = "abandoned_terraforming"
+			if = { 
+				limit = { 
+					has_global_flag = union_planmodif_active				
+					if = {									# -guilli
+						limit = {
+							NOR = {
+								has_modifier = "Precursor_Remnants"
+								has_modifier = "Precursor_Energy_Grid"
+								has_modifier = "Precursor_Satalite_Grid"
+								has_modifier = "Precursor_City"
+								has_modifier = "Precursor_Shipyards"
+								has_modifier = "Precursor_Planetary_Gun"
+								has_modifier = "Precursor_Bunker_Grid"
+								has_modifier = "Precursor_Mechs"
+								has_modifier = "Precursor_Planetary_Shield"
+								has_modifier = "Precursor_Floating_City"
+								has_modifier = "Precursor_Capital_Complex"
+								has_modifier = "Precursor_Communication_Hub"
+								has_modifier = "Precursor_Singularity_Drive"
+							}
+						}
+						reroll_planet_modifiers = yes		# -guilli
+						c_remove_precursor_modifiers = yes 	# -guilli
+					}
+					
+				}
+			}
+			if = {
+				limit = { has_planet_flag = pm_is_wondrous_world }
+				remove_planet_flag = pm_is_wondrous_world
+				remove_planet_flag = pm_is_wondrous_world_colour
+				remove_modifier = Planet_Wonder_Discovered
+				set_name = color_default_white
+			}
+			if = {
+				limit = { has_planet_flag = pm_is_precursor_world }
+				add_modifier = { modifier = terraforming_candidate_precursor days = -1 } 
+				set_name = color_precursor_col
+			}
+		}
+		
+	}
+}

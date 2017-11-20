@@ -1,0 +1,64 @@
+[h1][b] First Release [/b][/h1]
+
+This Mod is part of a Greater Project called Union. Which is Project to combine majority of the Mods available on the workshop into one. There is an alternative to also create a Universal Mod Patch / Template once it is complete. To allow 90% of the Mods out there to work together. (Still determining how, but we will find a solution). 
+
+Link to Union-Core - http://steamcommunity.com/sharedfiles/filedetails/?id=1184096312
+
+[b] What this Mod Includes [/b]
+
+This Mod or Compilation is a Union of the following:
+
+[list]
+[*] ALIEN SUNS: ATMOSPHERES - S.C.Watson's Workshop - Link - http://steamcommunity.com/sharedfiles/filedetails/?id=1177814689
+[*] More Planet Types - knuckey333's Workshop - Link - http://steamcommunity.com/sharedfiles/filedetails/?id=694585917
+[*] More Star Classes - Kepler68's Workshop - Link - http://steamcommunity.com/sharedfiles/filedetails/?id=822305739
+[*] Hypothetical Stars -  Vµ? ?'s Workshop - Link - http://steamcommunity.com/sharedfiles/filedetails/?id=910751973
+[*] Reworked Planetary Diversity - SoulDoubt's Workshop - Link - http://steamcommunity.com/sharedfiles/filedetails/?id=SoulDoubt's Workshop
+[*] Strange New Worlds - docflamingo's Workshop - Link - http://steamcommunity.com/sharedfiles/filedetails/?id=707933292
+[/list]
+
+All credit goes to the Original Authors, for the Great Content, there are however key differences to the original Mods in order for them to work well with the Base Game and each other. For information on each Mod please view the mod links
+
+[b] Differences [/b]
+
+[list]
+[*] I have used Alien Suns: Atmospheres as a Base for this Compilation, therefore everything is tweaked to work with that Mod. However I have removed the ability to colonize all worlds Initially. To prevent Colony Spam. 
+[*] In the current version, Terraform links (with exception of the Vanilla default links) are not included, it will soon,
+[*] I will eventually create a system where there is  natural progression into taking Worlds that have different Atmospheres, to be colonized Initially using costly mechanisms (via Events and Modifiers) to allow the Planets to be colonized, as you advance and unlock new Technologies, you can then use Space Station Modules which eases the burden on the Costs to maintain the Planet, until you reach a stage of either Genetic Modification or Complete Terraform of the Atmosphere. 
+[*] Asteroids can be colonized using a similar Process above. However this is not yet included in this Version currently. I am busy Testing this.
+[*] I have also decreased the Planet Size on the Interface screen so that all Planets from across the board (over 120) can be selected. It is not perfect but i will work on it last. 
+[*] I have also removed all Habitable Traits from being Genetically Modified, due to it been quite a bit, as we are restricted by the system, therefore I did a work around of using a 7 Normal Traits as that can be used only at the Gentic Modification screen, which allows for the Species to survive in that Atmosphere across the board. (Image Above) 
+[/list]
+
+[b]NOTE [/b]
+To all those that say I have taken other peoples work, and I have done nothing, well YOU go and take over 11 000 lines of mods and try to get them work together one by one, including trying to improve it. Either way I did this for myself primarily and wish to share it with the Community. If any of the Original Authors wishes me to remove their part I will do so. However I wish you allow it. 
+
+Furthermore, if any of the Original Modders wish to use any of the tweaks ive done please do so, you can also use it to create mini patches for your Mods.
+
+[b] To Come [/b]
+
+[list]
+[*] Compilation of Planetary Modifiers
+[*] Compilation of Strategic Resources
+[*] Compilation of Real Space + Other Graphical enhancements
+[*] Tweaks to the Deposits and Resources Distribution
+[*] Terraform Links plus mechanisms mentioned above
+[*] Tile Sets and Others
+[/list]
+
+[b] Updates [/b]
+
+
+Finally and let me know if you find any Bugs or ways to Improve it ENJOY!
+
+
+
+
+
+
+
+
+
+
+
+ 

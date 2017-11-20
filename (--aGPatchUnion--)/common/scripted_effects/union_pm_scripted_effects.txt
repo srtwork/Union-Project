@@ -1,0 +1,144 @@
+union_starsone_modifier_rolled = {
+	random_list = {
+		15 = { add_modifier = { modifier = Unusual_Sun_Spots } }		
+		14 = { add_modifier = { modifier = Low_Metallicity } }	
+		14 = { add_modifier = { modifier = High_Metallicity } }	
+		14 = { add_modifier = { modifier = Plasmoid_Life } }	
+		14 = { add_modifier = { modifier = Stellar_Spectacle } }	
+		14 = { add_modifier = { modifier = Plasma_Tornadoes } }			
+		#10 = { example
+		#	add_modifier = { modifier = ex_tw }
+		#	add_modifier = { modifier = ex_necropolis }
+		#}
+		15 = {}		
+	}
+}
+
+union_lowgravity_modifier_rolled = {
+	random_list = {
+		50 = { add_modifier = { modifier = low_gravity } }		
+		50 = { add_modifier = { modifier = low_gravity_2 } }		
+		#10 = { example
+		#	add_modifier = { modifier = ex_tw }
+		#	add_modifier = { modifier = ex_necropolis }
+		#}	
+	}
+}
+
+union_higravity_modifier_rolled = {
+	random_list = {
+		50 = { add_modifier = { modifier = high_gravity } }		
+		50 = { add_modifier = { modifier = high_gravity_2 } }		
+		#10 = { example
+		#	add_modifier = { modifier = ex_tw }
+		#	add_modifier = { modifier = ex_necropolis }
+		#}	
+	}
+}
+
+union_atmos_modifier_rolled = {
+	random_list = {
+		33 = { add_modifier = { modifier = Thin_Atmospheres } }		
+		33 = { add_modifier = { modifier = Dense_Atmospheres } }		
+		#10 = { example
+		#	add_modifier = { modifier = ex_tw }
+		#	add_modifier = { modifier = ex_necropolis }
+		#}
+		34 = {}
+	}
+}
+
+union_weather_modifier_rolled = {
+	random_list = {
+		33 = { add_modifier = { modifier = Frequent_Thunderstorms } }		
+		33 = { add_modifier = { modifier = Global_Thunderstorms } }		
+		#10 = { example
+		#	add_modifier = { modifier = ex_tw }
+		#	add_modifier = { modifier = ex_necropolis }
+		#}
+		34 = {}
+	}
+}
+
+union_biome_modifier_rolled = {
+	random_list = {
+		30 = { add_modifier = { modifier = Single_Biome } }		
+		30 = { add_modifier = { modifier = Hyper_Complex_Biome } }		
+		#10 = { example
+		#	add_modifier = { modifier = ex_tw }
+		#	add_modifier = { modifier = ex_necropolis }
+		#}
+		40 = {}
+	}
+}
+
+union_minrich_modifier_rolled = {
+	random_list = {
+		20 = { add_modifier = { modifier = ultra_rich_2 } }		
+		20 = { add_modifier = { modifier = mineral_rich_2 } }	
+		20 = { add_modifier = { modifier = mineral_rich } }
+		20 = { add_modifier = { modifier = mineral_poor_2 } }	
+		#10 = { example
+		#	add_modifier = { modifier = ex_tw }
+		#	add_modifier = { modifier = ex_necropolis }
+		#}
+		20 = {}
+	}
+}
+
+union_axis_modifier_rolled = {
+	random_list = {
+		30 = { add_modifier = { modifier = Tilted_Axis } }		
+		30 = { add_modifier = { modifier = Perpendicular_Axis } }	
+		#13 = { add_modifier = { modifier = mineral_rich } }
+		#14 = { add_modifier = { modifier = mineral_poor_2 } }	
+		#10 = { example
+		#	add_modifier = { modifier = ex_tw }
+		#	add_modifier = { modifier = ex_necropolis }
+		#}
+		40 = {}
+	}
+}
+
+union_forests_modifier_rolled = {
+	random_list = {
+		20 = { add_modifier = { modifier = Proto_Forests } }		
+		20 = { add_modifier = { modifier = Planetwide_Forest } }	
+		20 = { add_modifier = { modifier = Dense_Forests } }
+		20 = { add_modifier = { modifier = Mushroom_Forest } }	
+		#10 = { example
+		#	add_modifier = { modifier = ex_tw }
+		#	add_modifier = { modifier = ex_necropolis }
+		#}
+		20 = {}
+	}
+}
+
+union_sandswea_modifier_rolled = {
+	random_list = {
+		25 = { add_modifier = { modifier = Sandstorms } }		
+		25 = { add_modifier = { modifier = Sand_Tornadoes } }	
+		25 = { add_modifier = { modifier = Quicksand } }
+		#10 = { add_modifier = { modifier = Mushroom_Forest } }	
+		#10 = { example
+		#	add_modifier = { modifier = ex_tw }
+		#	add_modifier = { modifier = ex_necropolis }
+		#}
+		25 = {}
+	}
+}
+
+union_oceansri_modifier_rolled = {
+	random_list = {
+		17 = { add_modifier = { modifier = Ocean_Trenches } }		
+		16 = { add_modifier = { modifier = Ocean_Ridges } }	
+		17 = { add_modifier = { modifier = Ocean_Currents } }
+		16 = { add_modifier = { modifier = Unique_Marine_Habitats } }
+		17 = { add_modifier = { modifier = Massive_Waves } }		
+		#10 = { example
+		#	add_modifier = { modifier = ex_tw }
+		#	add_modifier = { modifier = ex_necropolis }
+		#}
+		17 = {}
+	}
+}
