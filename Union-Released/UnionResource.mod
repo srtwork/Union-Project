@@ -1,0 +1,5 @@
+name="Union Project - Resource Assets"
+path="mod/UnionResource"
+picture="img.jpg"
+remote_file_id="1195746058"
+supported_version="1.8.*"
